@@ -1,0 +1,24 @@
+#Upstate
+state={
+	id=364
+	name="STATE_364"
+	manpower = 338764
+	
+	state_category = rural
+
+	history={
+		owner = SOC
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+		}
+		add_core_of = SOC
+
+
+	}
+
+	provinces={
+		1485 4653 7527  
+		#1547 3994 4491 7012 7134 7202 10029 10047 11927
+	}
+}

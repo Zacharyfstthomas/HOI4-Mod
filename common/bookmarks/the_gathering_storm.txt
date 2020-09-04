@@ -1,0 +1,30 @@
+bookmarks = {
+	bookmark = {
+		name = "The Sun Sets"
+		desc = "THE_SUN_SETS_DESC" #Needs to be changed
+		date = 1785.1.1.12  
+		picture = "GFX_select_date_1936" #Needs to be changed
+		default_country = "SGJ" #BTE British Empire later once foci exist
+		default = yes
+		
+		"SGJ" = {
+			history = SGJ_THE_SUN_SETS_DESC
+			ideology = fascism
+			ideas = {
+				samurai_standing
+				maritime_restrictions
+			}
+			focuses = {
+				SGJ_finish_industrizing
+				SGJ_proclaim_japanese_trade_empire
+				SGJ_remain_isolated
+			}
+		}
+		
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}
+

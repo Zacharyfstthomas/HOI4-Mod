@@ -1,0 +1,25 @@
+
+state={
+	id=823
+	name="STATE_823"
+	manpower = 108504
+	
+	state_category = rural
+
+	history={
+		owner = JEO
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			
+		}
+		add_core_of = JEO
+		
+
+
+	}
+
+	provinces={
+		968 5090 9949 9996
+	}
+}

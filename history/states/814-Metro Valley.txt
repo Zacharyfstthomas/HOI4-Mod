@@ -1,0 +1,27 @@
+
+state={
+	id=814
+	name="STATE_814"
+	manpower = 1351054
+	
+	state_category = town
+
+	history={
+		owner = VIR
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 2
+			arms_factory = 2
+		
+		}
+		add_core_of = VIR
+	
+		victory_points = {
+			7558 10
+		}
+	}
+
+	provinces={
+		4627 6971 7588 10441
+	}
+}

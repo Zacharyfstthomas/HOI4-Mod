@@ -1,0 +1,32 @@
+state={
+	id=822
+	name="STATE_822"
+	manpower = 938764
+	
+	state_category = city
+
+	history={
+		owner = SOC
+		buildings = {
+			infrastructure = 7
+			industrial_complex = 5
+			arms_factory = 4
+			7202 = {
+			naval_base = 1
+			}
+		}
+		add_core_of = SOC
+		victory_points = {
+			7202 10 
+		}
+		
+		victory_points = {
+			10029 15 
+		}
+
+	}
+
+	provinces={ 
+		1547 3994 7202 10029
+	}
+}

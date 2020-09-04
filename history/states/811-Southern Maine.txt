@@ -1,0 +1,38 @@
+state={
+	id=811
+	name="STATE_811"
+	resources={
+		steel=12 # was: 20.000
+	}
+
+	state_category = town
+
+
+	history={
+		owner = MAI
+		buildings = {
+			infrastructure = 4
+			arms_factory = 1
+			industrial_complex = 2
+			dockyard = 1
+			7462 = {
+				naval_base = 3
+
+			}
+
+		}
+		add_core_of = MAI
+		victory_points = {
+			7462 10 
+		}
+	
+
+	}
+
+	provinces={
+		3732 6719 12202 7462 12459
+		
+	}
+	manpower=1404713
+	buildings_max_level_factor=1.000
+}

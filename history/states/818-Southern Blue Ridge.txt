@@ -1,0 +1,27 @@
+
+ #The Banks
+state={
+	id=818
+	name="STATE_818"
+	manpower = 1170274
+	
+	state_category = rural
+
+	history={
+		owner = NOC
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			arms_factory = 1
+		}
+		add_core_of = NOC
+		victory_points = {
+			1163 5 
+		}
+
+	}
+
+	provinces={
+		 7138 7643 9967 10096 10468 10495
+	}
+}

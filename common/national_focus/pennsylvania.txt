@@ -1,0 +1,754 @@
+﻿focus_tree = {
+	id = pennsylvania_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = PEN
+		}
+	}
+	#Focus for Fundamentalism
+	focus = {
+		id = PEN_fundamentalism
+		icon = GFX_goal_unknown
+		x = 28
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PEN_invite_quakers_to_philly }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		#This all requires an Idea with these factors.	PEN = {
+		#	army_morale_factor = 0.1 
+		#	army_core_defense_factor = 0.15 
+		#	army_core_attack_factor = 0.05
+		#	}
+		}
+	}
+
+
+	#Focus for Radical Republicanism
+	focus = {
+		id = PEN_radical_republicanism
+		icon = GFX_goal_unknown
+		x = 19
+		y = 3
+		cost = 14
+		available_if_capitulated = yes
+		prerequisite = { focus = PEN_embrace_democratic_values }
+		mutually_exclusive = { focus = PEN_stick_with_ben }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			has_government=neutrality
+		}
+		completion_reward = {
+			#PEN = {
+			#	add_popularity= { 
+			#	ideology = neutrality 
+			#	popularity = 0.1 
+			#	}
+		#neutral_drift = .025
+		#	}
+		}
+	}
+
+	#Focus for Urbanization
+	focus = {
+		id = PEN_urbanization
+		icon = GFX_goal_unknown
+		x = 2
+		y = 4
+		cost = 15
+		available_if_capitulated = yes
+		prerequisite = { focus = PEN_embrace_industrialization }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			797 = {
+			add_extra_state_shared_building_slots = 6 
+
+			}
+  
+		}
+	}
+
+	#Focus for Embrace the Enlightenment
+	focus = {
+		id = PEN_embrace_the_enlightenment
+		icon = GFX_goal_unknown
+		x = 5
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = PEN_mass_production 
+			focus = PEN_revitalize_our_veins 
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			PEN = {add_research_slot= 1}
+		}
+	}
+
+	#Focus for Feed the War Machine
+	focus = {
+		id = PEN_feed_the_war_machine
+		icon = GFX_goal_unknown
+		x = 8
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PEN_reconsider_the_agrarian_lifestyle }
+		mutually_exclusive = { focus = PEN_embrace_industrialization }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+		bonus = 1
+		uses = 2
+		category = industry
+		} 
+
+		add_resource {
+		type = oil 
+		amount = 10
+		state = 801}
+
+
+		add_resource {
+		type = oil
+		amount = 10
+		state = 798}
+
+		add_ideas = PEN_feed_the_war_machine
+
+		random_owned_controlled_state = { 
+		limit = { 
+		free_building_slots = { 
+        building = industrial_complex size > 0
+        include_locked = yes } 
+       } 
+		add_extra_state_shared_building_slots = 1 add_building_construction = { 
+			type = industrial_complex level = 1 
+			instant_build = yes } 
+		set_state_flag = PEN
+
+	}
+
+		random_owned_controlled_state = { 
+		limit = { 
+		free_building_slots = { 
+			building = industrial_complex size > 0
+			include_locked = yes } 
+       } 
+		add_extra_state_shared_building_slots = 1 add_building_construction = { 
+			type = industrial_complex level = 1 
+			instant_build = yes } 
+		set_state_flag = PEN
+			}
+		}
+	}
+
+	#Focus for Embrace Industrialization
+	focus = {
+		id = PEN_embrace_industrialization
+		icon = GFX_goal_unknown
+		x = 2
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PEN_reconsider_the_agrarian_lifestyle }
+		mutually_exclusive = { focus = PEN_feed_the_war_machine }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = { bonus = 0.55 uses = 3 category = industry }
+		add_ideas = PEN_embrace_industrialization
+		}
+	}
+
+	#Focus for Revitalize Our Veins
+	focus = {
+		id = PEN_revitalize_our_veins
+		icon = GFX_goal_unknown
+		x = 8
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PEN_increase_crop_yeilds }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = PEN_revitalize_our_veins
+
+		random_owned_controlled_state = { add_building_construction = { type = infrastructure 
+		level = 6
+		instant_build = yes } 
+			}
+		random_owned_controlled_state = { add_building_construction = { type = infrastructure 
+		level = 6 
+		instant_build = yes } 
+			}
+		random_owned_controlled_state = { add_building_construction = { type = infrastructure 
+		level = 6 
+		instant_build = yes }
+			}
+		}
+	}
+
+	#Focus for Increase Crop Yeilds
+	focus = {
+		id = PEN_increase_crop_yeilds
+		icon = GFX_goal_unknown
+		x = 8
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PEN_feed_the_war_machine }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = PEN_increase_crop_yeilds
+		}
+	}
+
+	#Focus for Mass Production
+	focus = {
+		id = PEN_mass_production
+		icon = GFX_goal_unknown
+		x = 2
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PEN_urbanization }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = PEN_mass_production
+		}
+	}
+
+	#Focus for Embrace Democratic Values
+	focus = {
+		id = PEN_embrace_democratic_values
+		icon = GFX_goal_unknown
+		x = 17
+		y = 2
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = PEN_the_keystone_nation }
+		mutually_exclusive = { 
+			focus = PEN_invite_quakers_to_philly 
+		}
+		mutually_exclusive = { 
+			focus = PEN_secure_control_and_power 
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			PEN = {
+			add_popularity = { 
+			ideology = democratic popularity = 0.3 
+				}
+			}
+
+		add_ideas = PEN_democratic_influence
+		}
+	}
+
+	#Focus for Invite Quakers To Philly
+	focus = {
+		id = PEN_invite_quakers_to_philly
+		icon = GFX_goal_unknown
+		x = 28
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PEN_the_keystone_nation }
+		mutually_exclusive = { 
+			focus = PEN_secure_control_and_power 
+		}
+		mutually_exclusive = { 
+			focus = PEN_embrace_democratic_values 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			has_government = communism
+		}
+		available = {
+			NOT {
+	has_government = communism
+	}
+		}
+		completion_reward = {
+			PEN = {
+			add_popularity = {
+			ideology = communism 
+			popularity = 0.25 }
+			}
+
+		add_ideas = PEN_communism_influence
+		}
+	}
+
+	#Focus for Reconsider The Agrarian Lifestyle
+	focus = {
+		id = PEN_reconsider_the_agrarian_lifestyle
+		icon = GFX_goal_unknown
+		x = 5
+		y = 2
+		cost = 14
+		available_if_capitulated = yes
+		prerequisite = { focus = PEN_the_keystone_nation }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			num_of_factories > 25
+		}
+		completion_reward = {
+			random_owned_state = {
+	add_extra_state_shared_building_slots = 2 
+	}
+
+	random_owned_state = {
+ add_extra_state_shared_building_slots = 2 
+	}
+		}
+	}
+
+	#Focus for The Keystone Nation
+	focus = {
+		id = PEN_the_keystone_nation
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = 14
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability =.05
+		add_political_power = 200
+		}
+	}
+
+	#Focus for Secure Control And Power
+	focus = {
+		id = PEN_secure_control_and_power
+		icon = GFX_goal_unknown
+		x = 22
+		y = 2
+		cost = 12
+		available_if_capitulated = yes
+		prerequisite = { focus = PEN_the_keystone_nation }
+		mutually_exclusive = { 
+			focus = PEN_embrace_democratic_values 
+		}
+		mutually_exclusive = { 
+			focus = PEN_invite_quakers_to_philly 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			has_government = fascism
+		}
+		completion_reward = {
+			PEN = {
+			add_popularity = {
+			ideology = fascism 
+			popularity = .25}
+			}
+		add_ideas = PEN_fascism_influence
+		}
+	}
+
+	#Focus for Stick With Ben
+	focus = {
+		id = PEN_stick_with_ben
+		icon = GFX_goal_unknown
+		x = 15
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PEN_embrace_democratic_values }
+		mutually_exclusive = { focus = PEN_radical_republicanism }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		 add_ideas = PEN_trusted
+	add_ideas = PEN_unified_nation
+		}
+	}
+
+	#Focus for Make Amends With New York
+	focus = {
+		id = PEN_make_amends_with_new_york
+		icon = GFX_goal_unknown
+		x = 16
+		y = 4
+		cost = 14
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = PEN_stick_with_ben 
+			focus = PEN_radical_republicanism 
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			#NEY = {
+	#country_event 
+	#}
+	#Fire off some events. Not yet here. #Also improve relations with one #another, maybe.
+		}
+	}
+
+	#Focus for Make Amends With Virginia
+	focus = {
+		id = PEN_make_amends_with_virginia
+		icon = GFX_goal_unknown
+		x = 18
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = PEN_stick_with_ben 
+			focus = PEN_radical_republicanism 
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			#VIR = {
+	#country_event 
+	#}
+	#Fire off some events. Not yet here. #Also improve relations with one #another, maybe.
+		}
+	}
+
+	#Focus for Align With New York
+	focus = {
+		id = PEN_align_with_new_york
+		icon = GFX_goal_unknown
+		x = 16
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PEN_make_amends_with_new_york }
+		mutually_exclusive = { focus = PEN_align_with_virginia }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			#NEY = {Accepted the decision to #remove claims.}
+
+	#NEY has good relationship
+	#NEY would accept a faction.
+
+
+	NEY = {
+	has_government = democratic
+	}
+		}
+		completion_reward = {
+			PEN = {
+	create_faction = 'Pennsylvanian-New_York_Coalition'
+	}
+
+	PEN = {
+  add_to_faction = NEY
+	}
+		}
+	}
+
+	#Focus for War Technology
+	focus = {
+		id = PEN_war_technology
+		icon = GFX_focus_eng_organise_the_blackshirts
+		x = 5
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PEN_embrace_the_enlightenment }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+		bonus = 0.50
+		uses = 2
+		category = land_doctrine
+		}
+
+		add_tech_bonus = {
+		bonus = 0.50
+		uses = 2
+		category = artillery
+		}
+
+
+		add_tech_bonus = {
+		bonus = 0.50
+		uses = 2
+		category = infantry_weapons
+		}
+
+		add_tech_bonus = {
+		bonus = 0.50
+		uses = 3
+		category = motorized_equipment
+		}
+	}
+	}
+
+	#Focus for Assert Soverignty
+	focus = {
+		id = PEN_assert_soverignty
+		icon = GFX_goal_unknown
+		x = 22
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = PEN_antagonize_connecticut 
+			focus = PEN_william_penn_the_wise 
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			824 = {add_claim_by = PEN}
+	821 = {add_claim_by = PEN}
+	816 = {add_claim_by = PEN}
+	820 = {add_claim_by = PEN}
+	810 = {add_claim_by = PEN}
+	808 = {add_claim_by = PEN}
+	811 = {add_claim_by = PEN}
+		}
+	}
+
+	#Focus for Accquire an Atlantic Seaboard
+	focus = {
+		id = PEN_accquire_an_atlantic_seaboard
+		icon = GFX_goal_unknown
+		x = 24
+		y = 3
+		cost = 12
+		available_if_capitulated = yes
+		prerequisite = { focus = PEN_secure_control_and_power }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal= { 
+		type = annex_everything 
+		target = NEJ
+			}
+		}
+	}
+
+	#Focus for William Penn The Wise
+	focus = {
+		id = PEN_william_penn_the_wise
+		icon = GFX_goal_unknown
+		x = 29
+		y = 4
+		cost = 15
+		available_if_capitulated = yes
+		prerequisite = { focus = PEN_fundamentalism }
+		search_filters = { FOCUS_FILTER_FRA_POLITICAL_VIOLENCE } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+		}
+	}
+
+	#Focus for Antagonize New York
+	focus = {
+		id = PEN_antagonize_new_york
+		icon = GFX_goal_unknown
+		x = 26
+		y = 3
+		cost = 15
+		available_if_capitulated = yes
+		prerequisite = { focus = PEN_secure_control_and_power }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			PEN = {has_government = fascism}
+		}
+		completion_reward = {
+			create_wargoal= { 
+		type = annex_everything 
+		target = NEY
+
+	}
+		}
+	}
+
+	#Focus for Antagonize Virginia
+	focus = {
+		id = PEN_antagonize_virginia
+		icon = GFX_goal_unknown
+		x = 21
+		y = 3
+		cost = 15
+		available_if_capitulated = yes
+		prerequisite = { focus = PEN_secure_control_and_power }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			has_war_with = VIR
+		}
+		completion_reward = {
+			create_wargoal= { 
+	type = annex_everything 
+	target = VIR
+	}
+
+	create_wargoal = {
+	type = annex_everything 
+	target = MRY
+	}
+		}
+	}
+
+	#Focus for The Northern Coalition
+	focus = {
+		id = PEN_the_northern_coalition
+		icon = GFX_goal_unknown
+		x = 16
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PEN_align_with_new_york }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			#CON would accept the invite.
+	#MAS would accept.
+		#NEH would accept.
+	#MAI would accept. All of these are a little offput.
+
+	NEH = {has_government = democratic}
+	MAI = {has_government = democratic}
+	MAS = {has_government = democratic}
+	CON = {has_government = democratic}
+		}
+		completion_reward = {
+			PEN = {
+  add_to_faction = MAS
+  add_to_faction = NEH
+  add_to_faction = MAI
+  add_to_faction = CON
+
+	}
+		}
+	}
+
+	#Focus for Align With Virginia
+	focus = {
+		id = PEN_align_with_virginia
+		icon = GFX_goal_unknown
+		x = 18
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PEN_make_amends_with_virginia }
+		mutually_exclusive = { focus = PEN_align_with_new_york }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			VIR = {
+	has_government = democratic
+	}
+
+	#VIR = {Accepted the decision to #remove claims.}
+
+	#NEY has good relationship
+	#NEY would accept a faction.
+		}
+		completion_reward = {
+			PEN = {
+		create_faction = 'Pennsylvanian-Virginian_Coalition'
+		}
+
+
+		PEN = {
+	add_to_faction = VIR
+		}
+	}
+	}
+
+	#Focus for Antagonize Connecticut
+	focus = {
+		id = PEN_antagonize_connecticut
+		icon = GFX_goal_unknown
+		x = 26
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PEN_antagonize_new_york }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			PEN = {has_government = fascism}
+		}
+		completion_reward = {
+			create_wargoal= { 
+		type = annex_everything 
+		target = CON
+		}
+	}
+  }
+
+	#End of focuses 
+ }

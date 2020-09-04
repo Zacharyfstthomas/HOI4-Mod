@@ -1,0 +1,329 @@
+ideas = {
+	country = {
+	
+		PEN_fundamentalism = {
+			
+			allowed = {
+				always = no # Added via focus
+			}
+			removal_cost = -1
+
+			picture = samurai_families.dds
+			
+			modifier = {
+				army_morale_factor = 0.1 
+			army_core_defence_factor = 0.15 
+			army_core_attack_factor = 0.05
+			}
+		}
+		
+			#consumer_goods_factor = 0.025  
+		
+		
+		PEN_workforce_training = {
+			
+			allowed = {
+				always = no 
+			}
+
+			removal_cost = -1
+
+			picture = samurai_families.dds
+			
+			modifier = {
+				consumer_goods_factor = 0.025
+		
+			}
+		}
+		
+		# democratic
+		# 
+		#
+		#
+		
+		PEN_workforce_trained = {
+			
+			allowed = {
+				always = no 
+			}
+
+			removal_cost = -1
+
+			picture = samurai_families.dds
+			
+			modifier = {
+				
+			industrial_capacity_factory = 0.1 
+production_factory_efficiency_gain_factor = 0.05 
+production_factory_start_efficiency_factor = 0.05
+		
+			}
+		}
+		
+		
+		PEN_embrace_industrialization = {
+			
+			allowed = {
+				always = no 
+			}
+
+			removal_cost = -1
+
+			picture = samurai_families.dds
+			
+			modifier = {
+				
+			production_speed_buildings_factor = 0.1
+			}
+		}
+		
+		
+		PEN_revitalize_our_veins = {
+		
+		allowed = {
+				always = no 
+			}
+
+			removal_cost = -1
+
+			picture = samurai_families.dds
+			
+			modifier = {
+				
+		   production_speed_infrastructure_factor = 0.5
+			}
+		
+		
+		
+		}
+		
+		PEN_feed_the_war_machine = {
+		
+		allowed = {
+				always = no 
+			}
+
+			removal_cost = -1
+
+			picture = samurai_families.dds
+			
+			modifier = {
+				
+		   conscription = 0.04
+			}
+		
+		
+		
+		}
+		
+		
+		
+		PEN_increase_crop_yeilds = {
+		
+		allowed = {
+				always = no 
+			}
+
+			removal_cost = -1
+
+			picture = samurai_families.dds
+			
+			modifier = {
+				
+		  	local_resources_factor = 0.5
+			}
+		
+		
+		
+		}
+		
+		
+		PEN_democratic_influence = {
+		
+		allowed = {
+				always = no 
+			}
+
+			removal_cost = -1
+
+			picture = samurai_families.dds
+			
+			modifier = {
+				democratic_drift = 0.05
+			}
+		
+		
+		
+		}
+		
+		PEN_oppostion_influence = {
+		
+		allowed = {
+				always = no 
+			}
+
+			removal_cost = -1
+
+			picture = samurai_families.dds
+			
+			modifier = {
+				opposition_drift = 0.05
+			}
+		
+		
+		
+		}
+		
+		
+		
+		PEN_mass_production = {
+		
+		allowed = {
+				always = no 
+			}
+
+			removal_cost = -1
+
+			picture = samurai_families.dds
+			
+			modifier = {
+				
+production_factory_max_efficiency_factor = 0.1
+line_change_production_efficiency_factor = 0.15
+production_speed_buildings_factor = 0.1 
+industrial_capacity_factory = 0.1 
+production_factory_efficiency_gain_factor = 0.05 
+production_factory_start_efficiency_factor = 0.05
+			}
+		
+		
+		
+		}
+		PEN_communism_influence = {
+		
+		allowed = {
+				always = no 
+			}
+
+			removal_cost = -1
+
+			picture = samurai_families.dds
+			
+			modifier = {
+				communism_drift = 0.025
+			}
+		
+		
+		
+		}
+		
+		
+			PEN_fascism_influence = {
+		
+		allowed = {
+				always = no 
+			}
+
+			removal_cost = -1
+
+			picture = samurai_families.dds
+			
+			modifier = {
+				fascism_drift = 0.025
+			}
+		
+		
+		
+		}
+		
+		PEN_unified_nation = {
+		
+		allowed = {
+				always = no 
+			}
+
+			removal_cost = -1
+
+			picture = samurai_families.dds
+			
+			modifier = {
+				stability_factor = 0.10
+				conscription = 0.01
+			}
+		
+		
+		
+		}
+		
+		PEN_ben_franklin_trusted = {
+		
+		allowed = {
+				always = no 
+			}
+
+			removal_cost = -1
+
+			picture = samurai_families.dds
+			
+			modifier = {
+				political_power_gain = 0.5
+				drift_defence_factor = 1
+				war_support_factor = 0.05
+				foreign_subversive_activites = -0.5
+			}
+		
+		
+		
+		}
+		
+		
+		PEN_william_penn_the_wise = {
+		
+		allowed = {
+				always = no 
+			}
+
+			removal_cost = -1
+
+			picture = samurai_families.dds
+			
+			modifier = {
+				war_support_factor = 0.10 
+drift_defence_factor = 0.5 
+justify_war_goal_time = -0.25
+out_of_supply_factor = -0.5 
+max_dig_in = 2 
+consumer_goods_factor = 0.1
+local_resources_factor = 0.5
+			}
+		
+		
+		
+		}
+		
+		
+		PEN_homegrown_heroes = {
+			
+		allowed = {
+				always = no 
+			}
+
+			removal_cost = -1
+
+			picture = samurai_families.dds
+			
+			modifier = {
+			conscription = 0.035
+			army_core_attack_factor = 0.10
+			army_core_defence_factor = 0.15
+			army_morale_factor = 0.05
+			
+			}
+		
+		
+		
+		}
+		
+		
+	}
+}	

@@ -1,0 +1,49 @@
+
+
+#THIS WAS ONCE THE ERIE LAKESHORE STATE. IT WILL BE RENAMED>. FOR NOW THIS IS A REPLACEMENT, MAYBE
+#PLAN: Break up the state into 5 seperate states for the PEN country.
+state={
+	id=360
+	name="STATE_360"
+	manpower = 810346
+	
+	state_category = town
+	
+	resources={
+		steel=20 # was: 80
+	}
+
+
+	history={
+		owner = PEN
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			arms_factory = 1
+			dockyard = 4
+			air_base = 1
+			3687 = {
+				naval_base = 3
+
+			}
+		}
+		add_core_of = PEN
+		victory_points = {
+			6845 20
+		}
+		victory_points = {
+			11800 15
+		}
+		1939.1.1 = {
+			buildings = {
+				industrial_complex = 6
+				dockyard = 8
+			}
+		}
+
+	}
+
+	provinces={
+		3687 6705 9662 6899
+	}
+}

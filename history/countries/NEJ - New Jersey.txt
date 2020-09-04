@@ -1,0 +1,137 @@
+capital = 359
+oob = "NEJ_1785"
+set_research_slots = 3
+
+set_technology = {
+#These are to be changed to older techs
+
+	infantry_weapons = 1
+	tech_support = 1
+	tech_recon = 1
+	gw_artillery = 1
+	tech_engineers = 1
+}
+
+set_convoys = 100
+
+1939.1.1 = {
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = large_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	set_technology = {
+		tech_support = 1
+		tech_recon = 1
+
+		#doctrines
+		air_superiority = 1
+		grand_battle_plan = 1
+		trench_warfare = 1
+		fleet_in_being = 1
+		battlefleet_concentration = 1
+		convoy_sailing = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+		computing_machine = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1933.3.5"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	democratic = 85
+	fascism = 0
+	communism = 5
+	neutrality = 10
+}
+#NEW PARTIES:
+#DEMOCRACY
+#THEOCRACY(communism) FEDERALISM?
+#MONARCHY(NONALIGNED)
+#MILITARY DICTATORSHIP(fascism)
+
+#Victor Emmanuel III of Italy after 39
+create_country_leader = {
+	name = "Abraham Clark"
+	desc = ""
+	picture = "gfx/leaders/NEJ/Clark.dds"
+	expire = "1965.1.1"
+	ideology = conservatism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "John Witherspoon"
+	desc = ""
+	picture = "gfx/leaders/NEJ/Withers.dds"
+	expire = "1965.1.1"
+	ideology = despotism
+	traits = {
+		#
+	}
+}	
+create_country_leader = {
+	name = "Francis Hopkinson"
+	desc = ""
+	picture = "gfx/leaders/NEJ/Hopkinson.dds"
+	expire = "1965.1.1"
+	ideology = marxism
+	traits = {
+		#
+	}
+}
+	
+
+#shitty communism leader, also communism doesnt exist yet
+create_country_leader = {
+	name = "William Xander"
+	desc = ""
+	picture = "gfx/leaders/NEJ/WillieXander.dds"
+	expire = "1965.1.1"
+	ideology = dictatorship
+	traits = {
+		#
+	}
+}
+
+create_field_marshal = {
+	name = "Willaim Winds"
+	portrait_path = "gfx/leaders/NEJ/Generic1.dds"
+	traits = { }
+	skill = 2
+	attack_skill = 2
+    defense_skill = 1
+    planning_skill = 1
+    logistics_skill = 2
+}
+
+
+

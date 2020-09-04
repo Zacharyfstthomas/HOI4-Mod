@@ -1,0 +1,31 @@
+state={
+	id=807
+	name="STATE_807"
+	resources={
+		steel=13 # was: 24.000
+	}
+	
+	state_category = town
+
+	history={
+		owner = NEY
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 4
+			arms_factory = 1
+
+
+		}
+		add_core_of = NEY
+		victory_points = {
+			11654 5
+		}
+
+	}
+
+	provinces={
+		1436 6717 6795 6916 9693 9708 9721
+	}
+	manpower=4088061
+
+}

@@ -1,0 +1,45 @@
+﻿division_template = {
+	name = "Militiamen"			# Infantry Division - Planned formation for mobilization of divisions, 1937-1940
+	division_names_group = SWE_INF_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+
+	}
+	support = {
+		engineer = { x = 0 y = 1 }   
+	}
+}
+division_template = {
+	name = "Scout Calvary"  	# Cavalry Brigade
+	division_names_group = SWE_CAV_01
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }      # Recon consisted of ACs, motorcycle inf, cavalry
+	}
+}
+
+units = {
+	######## LAND UNITS ########
+division= {	# "State Militiamen"		
+		location = 6845
+		division_template = "Militiamen"
+		start_experience_factor = 0.75
+		start_equipment_factor = 0.925
+
+	}			
+	
+	division= {	# "State Militiamen"		
+		location = 11800
+		division_template = "Militiamen"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.95
+
+	}			

@@ -1,0 +1,40 @@
+
+
+
+
+#PLAN: Break up the state into 6 seperate states for the PEN country.
+state={
+	id=801
+	name="STATE_801"
+	manpower = 331346
+	
+	state_category = rural
+	
+	resources={
+		steel=16		# was: 80
+	}
+
+
+	history={
+		owner = PEN
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+
+		}
+		add_core_of = PEN
+		
+		
+		1939.1.1 = {
+			buildings = {
+				industrial_complex = 6
+				dockyard = 8
+			}
+		}
+
+	}
+
+	provinces={
+	 702 3880 6872 6885 9836 11648 11817 12405
+	}
+}

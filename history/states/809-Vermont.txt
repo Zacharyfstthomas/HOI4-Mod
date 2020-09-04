@@ -1,0 +1,32 @@
+state={
+	id=809
+	name="STATE_809"
+	resources={
+		steel=12 # was: 20.000
+	}
+
+	state_category = town
+
+
+	history={
+		owner = NEH
+		buildings = {
+			infrastructure = 4
+			arms_factory = 1
+			industrial_complex = 3
+			dockyard = 4
+
+		}
+		add_core_of = NEH
+
+	
+
+	}
+
+	provinces={
+		4445 7629 9675 13158  
+	 
+	}
+	manpower=894713
+	buildings_max_level_factor=1.000
+}

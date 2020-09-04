@@ -1,0 +1,38 @@
+state={
+	id=810
+	name="STATE_810"
+	resources={
+		steel=12 # was: 20.000
+	}
+
+	state_category = metropolis
+
+
+	history={
+		owner = MAS
+		buildings = {
+			infrastructure = 8
+			arms_factory = 3
+			industrial_complex = 7
+			dockyard = 4
+			6732 = {
+				naval_base = 8
+
+			}
+
+		}
+		add_core_of = MAS
+		victory_points = {
+			6732 20 
+		}
+	
+
+	}
+
+	provinces={
+		715 718 905 908 3710 3906 6732
+		
+	}
+	manpower=5404713
+	buildings_max_level_factor=1.250
+}

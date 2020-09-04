@@ -1,0 +1,1001 @@
+focus_tree = {
+	id = new_york_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = NEY
+		}
+	}
+	
+	
+	#Focus for War Technology
+	focus = {
+		id = NEY_war_technology
+		icon = GFX_focus_eng_organise_the_blackshirts
+		x = 10
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_embrace_the_enlightenment }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+		bonus = 0.50
+		uses = 4
+		category = land_doctrine
+		}
+
+		add_tech_bonus = {
+		bonus = 0.50
+		uses = 4
+		category = artillery
+		}
+
+
+		add_tech_bonus = {
+		bonus = 0.50
+		uses = 4
+		category = infantry_weapons
+		}
+
+		add_tech_bonus = {
+		bonus = 0.50
+		uses = 3
+		category = motorized_equipment
+		}
+	}
+}
+	
+	#Focus for Workforce Training
+	focus = {
+		id = NEY_workforce_training
+		icon = GFX_goal_unknown
+		x = 2
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_urbanization }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		#For a few months :
+		# consumer good factories + 2.5%
+#industrial_capacity_factory = 0.1 
+#production_factory_efficiency_gain_factor = 0.05 
+#production_factory_start_efficiency_factor = 0.05
+		}
+	}
+
+#Focus for Home-Grown Heroes
+	focus = {
+		id = NEY_homegrown_heroes
+		icon = GFX_goal_unknown
+		x = 8
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_revitalize_our_veins }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		# idea for recruitable_population = 0.020 
+		#idea for additonal core defense
+		add_war_support = .10
+	
+	}
+}
+
+
+	
+	#	Focus for Reconsider The Agrarian Lifestyle
+	focus = {
+		id = NEY_reconsider_the_agrarian_lifestyle
+		icon = GFX_goal_unknown
+		x = 5
+		y = 2
+		cost = 14
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_the_empire_state }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+		factor = 1
+		}
+		available = {
+			num_of_factories > 25
+		}
+		completion_reward = {
+			random_owned_state = {
+ add_extra_state_shared_building_slots = 2 
+}
+
+random_owned_state = {
+ add_extra_state_shared_building_slots = 2 
+}
+		}
+	}
+#Focus for Urbanization
+	focus = {
+		id = NEY_urbanization
+		icon = GFX_goal_unknown
+		x = 2
+		y = 4
+		cost = 15
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_embrace_industrialization }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			358 = {
+			add_extra_state_shared_building_slots = 6 
+
+			}
+  
+		}
+	}
+
+
+
+#Focus for Embrace the Enlightenment
+	focus = {
+		id = NEY_embrace_the_enlightenment
+		icon = GFX_goal_unknown
+		x = 5
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = NEY_mass_production 
+			focus = NEY_revitalize_our_veins 
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			NEY = {add_research_slot= 1}
+		}
+	}
+
+
+#Focus for Feed the War Machine
+	focus = {
+		id = NEY_feed_the_war_machine
+		icon = GFX_goal_unknown
+		x = 8
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_reconsider_the_agrarian_lifestyle }
+		mutually_exclusive = { focus = NEY_embrace_industrialization }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+		bonus = 1
+		uses = 2
+		category = industry
+		} 
+
+		add_resource {
+		type = oil 
+		amount = 10
+		state = 801}
+
+
+		add_resource {
+		type = oil
+		amount = 10
+		state = 798}
+
+		#conscription = .025
+
+		random_owned_controlled_state = { 
+		limit = { 
+		free_building_slots = { 
+        building = industrial_complex size > 0
+        include_locked = yes } 
+       } 
+		add_extra_state_shared_building_slots = 1 add_building_construction = { 
+			type = industrial_complex level = 1 
+			instant_build = yes } 
+		set_state_flag = NEY
+
+	}
+
+		random_owned_controlled_state = { 
+		limit = { 
+		free_building_slots = { 
+			building = industrial_complex size > 0
+			include_locked = yes } 
+       } 
+		add_extra_state_shared_building_slots = 1 add_building_construction = { 
+			type = industrial_complex level = 1 
+			instant_build = yes } 
+		set_state_flag = NEY
+			}
+		}
+	}
+	
+	#Focus for Embrace Industrialization
+	focus = {
+		id = NEY_embrace_industrialization
+		icon = GFX_goal_unknown
+		x = 2
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_reconsider_the_agrarian_lifestyle }
+		mutually_exclusive = { focus = NEY_feed_the_war_machine }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = { bonus = 0.55 uses = 3 category = industry }
+
+	#production_speed_buildings_factor = .1
+		}
+	}
+
+	#Focus for Revitalize Our Veins
+	focus = {
+		id = NEY_revitalize_our_veins
+		icon = GFX_goal_unknown
+		x = 8
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_increase_crop_yeilds }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		#	production_speed_infrastructure_factor = .5
+
+		random_owned_controlled_state = { add_building_construction = { type = infrastructure 
+		level = 6
+		instant_build = yes } 
+			}
+		random_owned_controlled_state = { add_building_construction = { type = infrastructure 
+		level = 6 
+		instant_build = yes } 
+			}
+		random_owned_controlled_state = { add_building_construction = { type = infrastructure 
+		level = 6 
+		instant_build = yes }
+			}
+		}
+	}
+
+	#Focus for Increase Crop Yeilds
+	focus = {
+		id = NEY_increase_crop_yeilds
+		icon = GFX_goal_unknown
+		x = 8
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_feed_the_war_machine }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+	#		local_resources_factor = .5
+		}
+	}
+
+	#Focus for Mass Production
+	focus = {
+		id = NEY_mass_production
+		icon = GFX_goal_unknown
+		x = 2
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_urbanization }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			#production_factory_max_efficiency_factor = 0.1
+#line_change_production_efficiency_factor = 0.15
+ #	production_speed_buildings_factor = 0.1 
+#industrial_capacity_factory = 0.1 
+#production_factory_efficiency_gain_factor = 0.05 
+#production_factory_start_efficiency_factor = 0.05
+		}
+	}
+
+	
+	#Focus for The States are United
+	focus = {
+		id = NEY_the_states_are_united
+		icon = GFX_goal_unknown
+		x = 33
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_invite_the_mid_atlantic_states }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOC = { is_in_faction = no }
+SOC = { is_in_faction = no }
+JEO = { is_in_faction = no }
+
+NOC = { has_government = democratic }
+SOC = { has_government = democratic }
+JEO = { has_government = democratic }
+		}
+		completion_reward = {
+			NEY = {
+add_to_faction = NOC
+add_to_faction = SOC
+add_to_faction = JEO
+
+
+}
+		}
+	}
+
+	#Focus for Forge a Coalition with New England
+	focus = {
+		id = NEY_forge_a_coalition_with_new_england
+		icon = GFX_goal_unknown
+		x = 33
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_international_cooperation }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			#All states have completed "Open To New #York" focus.
+MAS = { has_government = democratic }
+CON = {has_government = democratic}
+MAI = {has_government = democratic}
+NEH = {has_government = democratic}
+		}
+		completion_reward = {
+			NEY = {
+create_faction = 'New York-New England Coalition'  
+
+add_to_faction = MAS
+add_to_faction = MAI
+add_to_faction = CON
+add_to_faction = NEH
+}
+		}
+	}
+
+	#Focus for Fortifications
+	focus = {
+		id = NEY_fortifications
+		icon = GFX_goal_unknown
+		x = 30
+		y = 4
+		cost = 15
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_go_it_alone }
+		search_filters = { FOCUS_FILTER_TFV_AUTONOMY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			806 = {
+add_building_construction= { 
+type = bunker 
+province = 6707 
+level = 5
+instant_build = yes }
+  }
+
+
+807 = {
+add_building_construction= { 
+type = bunker 
+province = 6717 
+level = 5 
+instant_build = yes }
+  }
+
+
+804 = {
+add_building_construction= { 
+type = bunker 
+province = 3806 
+level = 5 
+instant_build = yes }
+  }
+
+804 = {
+add_building_construction= { 
+type = bunker 
+province = 11665 
+level = 5 
+instant_build = yes }
+  }
+
+
+
+358 = {
+add_building_construction= { 
+type = bunker 
+province = 3878 
+level = 5 
+instant_build = yes }
+  }
+		}
+	}
+
+	#Focus for Go it Alone
+	focus = {
+		id = NEY_go_it_alone
+		icon = GFX_goal_unknown
+		x = 30
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = NEY_george_clinton_a_true_statesman 
+			focus = NEY_john_jay_for_justice 
+		}
+		mutually_exclusive = { focus = NEY_international_cooperation }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			#add_idea = buff defense, subtract attack. #More emphasized on core territory.
+#add_idea = join faction minus modifier.
+		}
+	}
+
+	#Focus for George Clinton, A True Statesman
+	focus = {
+		id = NEY_george_clinton_a_true_statesman
+		icon = GFX_goal_unknown
+		x = 33
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_reinforce_revolutionary_ideals }
+		mutually_exclusive = { focus = NEY_john_jay_for_justice }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = democratic 
+popularity = 0.25
+}
+
+#add_idea = george_clinton
+		}
+	}
+
+	#Focus for Training Military Command
+	focus = {
+		id = NEY_training_military_command
+		icon = GFX_goal_unknown
+		x = 22
+		y = 4
+		cost = 12
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_hamiltons_time_to_shine }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			army_experience = 25
+#add_idea = training time - 10%
+		}
+	}
+
+	#Focus for Mass Evanganilization
+	focus = {
+		id = NEY_mass_evanganilization
+		icon = GFX_goal_unknown
+		x = 14
+		y = 4
+		cost = 12
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_robert_matthews_the_hallmark_of_holiness }
+		search_filters = { FOCUS_FILTER_MANPOWER } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability = 15%
+# add_idea: conscription = 0.025
+		}
+	}
+
+	#Focus for Spreading the Word
+	focus = {
+		id = NEY_spreading_the_word
+		icon = GFX_focus_smiling_buddha
+		x = 14
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_mass_evanganilization }
+		search_filters = { FOCUS_FILTER_ANNEXATION } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			#add_idea = justify_war_time = -50%
+#event = announce_intentions
+		}
+	}
+
+	#Focus for The New England Nusience
+	focus = {
+		id = NEY_the_new_england_nusience
+		icon = GFX_goal_unknown
+		x = 23
+		y = 5
+		cost = 14
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_training_military_command }
+		search_filters = { FOCUS_FILTER_ANNEXATION } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal= { 
+type = annex_everything 
+target = MAS
+}
+
+
+create_wargoal= { 
+type = annex_everything 
+target = CON
+}
+  
+
+create_wargoal= { 
+type = annex_everything 
+target = NEH
+}
+
+
+create_wargoal= { 
+type = annex_everything 
+target = MAI
+}
+		}
+	}
+
+	#Focus for The Canadian Question
+	focus = {
+		id = NEY_the_canadian_question
+		icon = GFX_goal_unknown
+		x = 24
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_the_new_england_nusience }
+		search_filters = { FOCUS_FILTER_ANNEXATION } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			276 = {add_claim_by= NEY}
+		}
+	}
+
+	#Focus for Accquire the Mid-Atlantic
+	focus = {
+		id = NEY_accquire_the_midatlantic
+		icon = GFX_goal_unknown
+		x = 19
+		y = 6
+		cost = 14
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_punish_pennsylvania }
+		search_filters = { FOCUS_FILTER_ANNEXATION } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal= { 
+type = annex_everything 
+target = NEJ
+}
+
+
+create_wargoal= { 
+type = annex_everything 
+target = MRY
+}
+
+
+create_wargoal= { 
+type = annex_everything 
+target = VIR
+}
+		}
+	}
+
+	#Focus for Uniting the States By Force
+	focus = {
+		id = NEY_uniting_the_states_by_force
+		icon = GFX_goal_unknown
+		x = 21
+		y = 7
+		cost = 14
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = NEY_accquire_the_midatlantic 
+		}
+		prerequisite = { 
+			focus = NEY_the_new_england_nusience 
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal= { 
+type = annex_everything 
+target = SOC
+}
+
+
+create_wargoal= { 
+type = annex_everything 
+target = NOC
+}
+
+
+create_wargoal= { 
+type = annex_everything 
+target = JEO
+}
+		}
+	}
+
+	#Focus for The Empire State
+	focus = {
+		id = NEY_the_empire_state
+		icon = GFX_goal_generic_wolf_pack
+		x = 24
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability =.05
+add_political_power = 200
+		}
+	}
+
+	#Focus for Reconsider Revolutionary Ideals
+	focus = {
+		id = NEY_reconsider_revolutionary_ideals
+		icon = GFX_goal_unknown
+		x = 18
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_the_empire_state }
+		mutually_exclusive = { focus = NEY_reinforce_revolutionary_ideals }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = autocratic 
+popularity = 0.15 
+}
+
+
+add_popularity= { 
+ideology = communism 
+popularity = 0.1 
+}
+		}
+	}
+
+	#Focus for Reinforce Revolutionary Ideals
+	focus = {
+		id = NEY_reinforce_revolutionary_ideals
+		icon = GFX_goal_unknown
+		x = 30
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_the_empire_state }
+		mutually_exclusive = { focus = NEY_reconsider_revolutionary_ideals }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = democratic
+popularity = 0.15 
+}
+
+add_popularity= { 
+ideology = oppostion 
+popularity = 0.1 
+}
+		}
+	}
+
+	#Focus for Military Might Makes Majesty
+	focus = {
+		id = NEY_military_might_makes_majesty #NEY_presbyterian_or_perish needed to be mutual
+		icon = GFX_goal_unknown
+		x = 22
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_reconsider_revolutionary_ideals }
+		mutually_exclusive = { focus = NEY_presbyterian_or_perish }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			has_government = autocratic
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = autocratic 
+popularity = 0.25
+}
+		}
+	}
+
+	#Focus for Presbyterian or Perish
+	focus = {
+		id = NEY_presbyterian_or_perish
+		icon = GFX_goal_unknown
+		x = 14
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_reconsider_revolutionary_ideals }
+		mutually_exclusive = { focus = NEY_military_might_makes_majesty }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = communism 
+popularity = 0.20 
+}
+		}
+	}
+
+	#Focus for Hamilton's Time to Shine
+	focus = {
+		id = NEY_hamiltons_time_to_shine
+		icon = GFX_goal_unknown
+		x = 22
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_military_might_makes_majesty }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			has_government = autocratic
+		}
+		available = {
+			autocratic > 50
+		}
+		completion_reward = {
+			set_politics = { ruling_party = autocratic }
+		}
+	}
+
+	#Focus for Robert Matthews, the Hallmark of Holiness
+	focus = {
+		id = NEY_robert_matthews_the_hallmark_of_holiness
+		icon = GFX_goal_unknown
+		x = 14
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_presbyterian_or_perish }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			has_government = communism
+		}
+		completion_reward = {
+			set_politics = {
+	ruling_party = communism}
+		}
+	}
+
+	#Focus for Secure Control And Power
+	focus = {
+		id = NEY_secure_control_and_power
+		icon = GFX_goal_unknown
+		x = 18
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = NEY_hamiltons_time_to_shine 
+			focus = NEY_robert_matthews_the_hallmark_of_holiness 
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			#training_time decrease
+
+swap_ideas = {
+remove_idea = civilian_economy
+add_idea = partial_economic_mobilization
+
+}
+		}
+	}
+
+	#Focus for Punish Pennsylvania
+	focus = {
+		id = NEY_punish_pennsylvania
+		icon = GFX_goal_unknown
+		x = 20
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_training_military_command }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal= { 
+type = annex_everything 
+target = PEN
+
+}
+		}
+	}
+
+	#Focus for John Jay for Justice
+	focus = {
+		id = NEY_john_jay_for_justice
+		icon = GFX_goal_unknown
+		x = 29
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_reinforce_revolutionary_ideals }
+		mutually_exclusive = { focus = NEY_george_clinton_a_true_statesman }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = opposition 
+popularity = 0.25
+}
+
+
+#add_idea = john_J for prez.drifts opposition
+		}
+	}
+
+	#Focus for International Cooperation
+	focus = {
+		id = NEY_international_cooperation
+		icon = GFX_goal_unknown
+		x = 32
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = NEY_george_clinton_a_true_statesman 
+			focus = NEY_john_jay_for_justice 
+		}
+		mutually_exclusive = { focus = NEY_go_it_alone }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			#add_idea = easier to join factions
+#easier to improve relations
+		}
+	}
+
+	#Focus for The Best Defense Is A Good Offense
+	focus = {
+		id = NEY_the_best_defense_is_a_good_offense
+		icon = GFX_goal_unknown
+		x = 30
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_fortifications }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			threat > 0.75
+		}
+		completion_reward = {
+			#remove_idea = go it alone
+#add_idea = keep defensive buffs, add #offensive buffs, increase war #justification time
+add_war_support = .05
+		}
+	}
+
+	#Focus for Invite The Mid Atlantic States
+	focus = {
+		id = NEY_invite_the_mid_atlantic_states
+		icon = GFX_goal_unknown
+		x = 33
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = NEY_forge_a_coalition_with_new_england }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NEJ = { is_in_faction = no }
+PEN = { is_in_faction = no }
+MRY = { is_in_faction = no }
+VIR = { is_in_faction = no }
+
+NEJ = { has_government = democratic }
+PEN = { has_government = democratic }
+MRY = { has_government = democratic }
+VIR = { has_government = democratic }
+		}
+		completion_reward = {
+			NEY = { 
+ add_to_faction = NEJ
+ add_to_faction = PEN
+ add_to_faction = MRY
+ add_to_faction = VIR
+}
+		}
+	}
+
+#End of focuses 
+ }

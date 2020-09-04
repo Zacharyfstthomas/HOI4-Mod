@@ -1,0 +1,19 @@
+state={
+	id=826
+	name="STATE_826"
+	manpower = 2009820
+	
+	state_category = rural
+
+	history={
+		owner = NPN
+		
+		
+		add_core_of = NPN
+	}
+
+	provinces={
+		1453 7524 10520 7480 7668 4464 10449 4650 1615 4756 492 860 11942 7640 
+		}
+	
+}

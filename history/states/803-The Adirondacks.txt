@@ -1,0 +1,31 @@
+state={
+	id=803
+	name="STATE_803"
+	resources={
+		steel=13 # was: 24.000
+	}
+	
+	state_category = rural
+
+	history={
+		owner = NEY
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 1
+
+
+		}
+		add_core_of = NEY
+		victory_points = {
+			11665 3 
+		}
+
+	}
+
+	provinces={
+		598 3602 6778 9754 10381 11662 11665 11722
+	}
+	manpower=2088061
+
+}

@@ -1,0 +1,18 @@
+
+state={
+	id=367
+	name="STATE_367"
+	manpower = 2646247
+	
+	state_category = rural
+
+	history={
+		owner = JEO
+		add_core_of = JEO
+		
+	}
+
+	provinces={
+		 1587 4594 4622 5059 7422 10192 11509 12735 12803 
+	}
+}

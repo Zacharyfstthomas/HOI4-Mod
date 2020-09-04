@@ -1,0 +1,23 @@
+
+#PEN = {
+#create_faction = 'Pennsylvanian-New York Coalition'
+#}
+
+
+#PEN = {
+	#add_to_faction = NEY
+#}
+
+
+#NEY = {
+#has_government = democratic
+#}
+
+#NEY = {
+#has_government = democratic
+#}
+
+#NEY = {Accepted the decision to #remove claims.}
+
+#NEY has good relationship
+#NEY would accept a faction.

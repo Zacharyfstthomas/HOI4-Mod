@@ -1,0 +1,42 @@
+#add_building_construction: adds a building in a province
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+
+#add_building_construction = {
+#							type = bunker #arms_factory? civilian_factory?
+#							level = 3
+#							province = 11640
+#							instant_build = yes
+#						}
+#
+# This commenting system sucks.
+#
+# 
+# The key factor between a fleshed out focus tree and a bear one is multiple options for multiple neighbors, a bit more elaborate than "gain war goal"
+# or "gain claim". Alot of this comes through events. Events may have a huge role in US focuses.
+# Especially over either faction creation or territory disputes.
+#
+#
+#
+#
+##
+#
+#Join Zoom Meeting#
+#https://us04web.zoom.us/j/74979640373?pwd=S0xDdFdaaUxzZ29vdFZzeUVLc2FSUT09
+#
+#Meeting ID: 749 7964 0373
+#Passcode: P5vYA3
+#
+#
+#
+#
+#
+#
+#
+#
+#

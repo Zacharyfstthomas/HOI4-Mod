@@ -1,0 +1,31 @@
+state={
+	id=812
+	name="STATE_812"
+	resources={
+		steel=12 # was: 20.000
+	}
+
+	state_category = rural
+
+
+	history={
+		owner = MAI
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+		}
+		add_core_of = MAI
+		victory_points = {
+			7462 10 
+		}
+	
+
+	}
+
+	provinces={
+		1282 1338 1619 4287 10318 12221 10247 
+		##715 718 733 905 908 3710 3712 3715 3906  4445 6732 7629 9675   10481  13158  
+	}
+	manpower=804713
+	buildings_max_level_factor=1.000
+}

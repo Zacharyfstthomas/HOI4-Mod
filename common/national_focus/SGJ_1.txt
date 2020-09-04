@@ -1,0 +1,1253 @@
+	focus_tree = {
+		id = 1
+		country = {
+			factor = 0
+			modifier = {
+				add = 10
+				tag = SGJ
+			}
+		}
+		#Focus for Divine Right
+		focus = {
+			id = SGJ_divine_right
+			icon = GFX_goal_unknown
+			x = 18
+			y = 1
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_focus_on_the_interior }
+			mutually_exclusive = { 
+				focus = SGJ_citizens_government_participation 
+			}
+			mutually_exclusive = { 
+				focus = SGJ_increase_emperors_power 
+			}
+			mutually_exclusive = { 
+				focus = SGJ_samurai_centric_government 
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		#Focus for Citizens Government Participation
+		focus = {
+			id = SGJ_citizens_government_participation
+			icon = GFX_goal_unknown
+			x = 6
+			y = 1
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_focus_on_the_interior }
+			mutually_exclusive = { 
+				focus = SGJ_samurai_centric_government 
+			}
+			mutually_exclusive = { 
+				focus = SGJ_increase_emperors_power 
+			}
+			mutually_exclusive = { 
+				focus = SGJ_divine_right 
+			}
+			search_filters = { FOCUS_FILTER_POLITICAL } 
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		#Focus for Prepare for the Future Wars
+		focus = {
+			id = SGJ_prepare_for_the_future_wars
+			icon = GFX_goal_unknown
+			x = 12
+			y = 8
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { 
+				focus = SGJ_forced_fighters 
+			}
+			prerequisite = { 
+				focus = SGJ_forced_workers 
+			}
+			prerequisite = { 
+				focus = SGJ_the_peoples_guardians 
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		#Focus for Prepare for Breach of Isolation
+		focus = {
+			id = SGJ_prepare_for_breach_of_isolation
+			icon = GFX_goal_unknown
+			x = 15
+			y = 9
+			cost = 5
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_prepare_for_shinto_indoctrination or = SGJ_prepare_for_the_future_wars }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		#Focus for Focus On the Interior
+		focus = {
+			id = SGJ_focus_on_the_interior
+			icon = GFX_goal_unknown
+			x = 9
+			y = 0
+			cost = 10
+			available_if_capitulated = yes
+			search_filters = { FOCUS_FILTER_POLITICAL } 
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				add_political_power = 150
+			}
+		}
+
+		#Focus for Prepare for Shinto Indoctrination
+		focus = {
+			id = SGJ_prepare_for_shinto_indoctrination
+			icon = GFX_goal_unknown
+			x = 18
+			y = 8
+			cost = 15
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_inaris_kitsune }
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = inaris_kitsune 
+					add_idea = blessings_of_the_kami
+				}
+				remove_ideas = { noushins_grace  lead_by_izanami_and_izanagi  hachimans_blessing }
+			}
+		}
+
+		#Focus for Inari's Kitsune
+		focus = {
+			id = SGJ_inaris_kitsune
+			icon = GFX_goal_unknown
+			x = 18
+			y = 7
+			cost = 15
+			available_if_capitulated = yes
+			prerequisite = { 
+				focus = SGJ_follow_in_the_footsteps_of_izanami_and_izanagi 
+			}
+			prerequisite = { 
+				focus = SGJ_noushins_grace 
+			}
+			prerequisite = { 
+				focus = SGJ_create_shinto_shrines 
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				add_ideas = inaris_kitsune
+			}
+		}
+
+		#Focus for Samurai Families
+		focus = {
+			id = SGJ_samurai_families
+			icon = GFX_goal_unknown
+			x = 12
+			y = 2
+			cost = 15
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_samurai_centric_government }
+			search_filters = { FOCUS_FILTER_POLITICAL } 
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				add_ideas = samurai_families
+			}
+		}
+
+		#Focus for Break Isolation
+		focus = {
+			id = SGJ_break_isolation
+			icon = GFX_goal_unknown
+			x = 33
+			y = 0
+			cost = 15
+			available_if_capitulated = yes
+			mutually_exclusive = { focus = SGJ_remain_isolated }
+			search_filters = { FOCUS_FILTER_POLITICAL } 
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				has_completed_focus = SGJ_prepare_for_breach_of_isolation
+			}
+			completion_reward = {
+			add_political_power = 150
+			}
+		}
+
+
+		#Focus for Prepare for a Trade Empire
+		focus = {
+			id = SGJ_prepare_for_a_trade_empire
+			icon = GFX_goal_unknown
+			x = 33
+			y = 1
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_break_isolation }
+			search_filters = { FOCUS_FILTER_POLITICAL } 
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				has_completed_focus = SGJ_finish_industrizing 
+			}
+			completion_reward = {
+				add_political_power = 150
+			}
+		}
+
+		#Focus for Dockyard Expansion
+		focus = {
+			id = SGJ_dockyard_expansion
+			icon = GFX_goal_unknown
+			x = 35
+			y = 2
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_prepare_for_a_trade_empire }
+			search_filters = { FOCUS_FILTER_INDUSTRY } 
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				has_idea = industrialized_economy
+			}
+			completion_reward = {
+				random_owned_controlled_state = {
+				limit = {
+				free_building_slots = {
+				building = dockyard
+				size > 0
+				include_locked = yes
+				}
+			}
+
+					add_extra_state_shared_building_slots = 5
+					add_building_construction = {
+					type = dockyard
+					level = 5
+					instant_build = yes
+					}
+				}
+			}
+		} #This may not be in the right place. If your focus tree is having issues, check the above focus, as this closing brace was added to close the focus.
+
+		#Focus for Prioritize Naval Research
+		focus = {
+			id = SGJ_prioritize_naval_research
+			icon = GFX_goal_unknown
+			x = 34
+			y = 3
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_dockyard_expansion }
+			mutually_exclusive = { focus = SGJ_prioritize_army_research }
+			search_filters = { FOCUS_FILTER_RESEARCH } 
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				add_tech_bonus = {
+				bonus = 1.50 
+				uses = 2 
+				category = dd_tech
+				category = cl_tech 
+				}
+			}
+		}
+
+		#Focus for Prioritize Army Research
+		focus = {
+			id = SGJ_prioritize_army_research
+			icon = GFX_goal_unknown
+			x = 36
+			y = 3
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_dockyard_expansion }
+			mutually_exclusive = { focus = SGJ_prioritize_naval_research }
+			search_filters = { FOCUS_FILTER_RESEARCH } 
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				army_experience = 25
+				add_tech_bonus = {
+				bonus = 0.75 
+				uses = 2 
+				category = infantry_tech 
+				}
+				add_tech_bonus = {
+				bonus = 1 
+				uses = 1 
+				category = artillery 
+				}
+			}
+		}
+
+		#Focus for Acquire Resources
+		focus = {
+			id = SGJ_acquire_resources
+			icon = GFX_goal_unknown
+			x = 35
+			y = 4
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { 
+				focus = SGJ_prioritize_naval_research 
+				focus = SGJ_prioritize_army_research 
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				create_wargoal= { 
+				type = annex_everything 
+				target = NSW
+				type = annex_everything 
+				target = CHK
+				}
+			}
+		}
+
+		#Focus for Maori Nuisance
+		focus = {
+			id = SGJ_maori_nuisance
+			icon = GFX_goal_unknown
+			x = 35
+			y = 8
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_acquire_resources }
+			search_filters = { FOCUS_FILTER_ANNEXATION } 
+			ai_will_do = {
+				factor = 1
+			}
+			bypass = {
+				country_exists= MAO
+			}
+			completion_reward = {
+				create_wargoal = { 
+				type = annex_everything 
+				target = MAO
+				}
+			}
+		}
+
+		#Focus for Transport Innovations
+		focus = {
+			id = SGJ_transport_innovations
+			icon = GFX_goal_unknown
+			x = 31
+			y = 2
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_prepare_for_a_trade_empire }
+			search_filters = { FOCUS_FILTER_RESEARCH } 
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				has_idea= industrialized_economy
+			}
+			completion_reward = {
+				add_tech_bonus = {
+				bonus = 2 
+				uses = 1 
+				category = tp_tech 
+				}
+			}
+		}
+
+		#Focus for Asian Foothold
+		focus = {
+			id = SGJ_asian_foothold
+			icon = GFX_goal_unknown
+			x = 31
+			y = 3
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_transport_innovations }
+			search_filters = { FOCUS_FILTER_ANNEXATION } 
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				create_wargoal = { 
+				type = annex_everything 
+				target = ROK
+				}
+			}
+		}
+
+		#Focus for Fortress Korea
+		focus = {
+			id = SGJ_fortress_korea
+			icon = GFX_goal_unknown
+			x = 32
+			y = 4
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_asian_foothold }
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				owns_state = 527
+				owns_state = 525
+			}
+				completion_reward = {
+					army_experience = 5
+				219 = {
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 11835
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 9918
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 9795
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 11828
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 6963
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 906
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 9899
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 3803
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 4
+						province = 3860
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 4
+						province = 898
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 4
+						province = 6944
+						instant_build = yes
+					}
+				}
+			}
+		} #add bunkers on korea side of china border here
+
+		#Focus for Build Up Korea
+		focus = {
+			id = SGJ_build_up_korea
+			icon = GFX_goal_unknown
+			x = 30
+			y = 4
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_asian_foothold }
+			search_filters = { FOCUS_FILTER_INDUSTRY } 
+			ai_will_do = {
+				factor = 1
+				}
+				available = {
+				owns_state = 527
+				owns_state = 525
+				}
+				completion_reward = {
+				random_owned_controlled_state={
+				limit = {
+				free_building_slots = {
+				building = industrial_complex
+				size > 0
+				include_locked = yes
+				}
+
+				}
+
+					add_extra_state_shared_building_slots = 5
+					add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+					}
+				}
+			}
+		}
+
+		#Focus for New Age Warfare
+		focus = {
+			id = SGJ_new_age_warfare
+			icon = GFX_goal_unknown
+			x = 31
+			y = 5
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { 
+				focus = SGJ_fortress_korea 
+			}
+			prerequisite = { 
+				focus = SGJ_build_up_korea 
+			}
+			search_filters = { FOCUS_FILTER_RESEARCH } 
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				add_tech_bonus = {
+				bonus = 2 
+				uses = 1 
+				category = land_doctrine
+			}
+			add_tech_bonus = {
+			bonus = 1.5 
+			uses = 1 
+			category = armor 
+				}
+			}
+		}
+
+		#Focus for Demand Northern China
+		focus = {
+			id = SGJ_demand_northern_china
+			icon = GFX_goal_unknown
+			x = 31
+			y = 6
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_new_age_warfare }
+			search_filters = { FOCUS_FILTER_ANNEXATION } 
+			ai_will_do = {
+				factor = 1
+			}
+			#available = {
+				#date >, date <> 1940.1.1 #1794 later on once all bugs fixed and dates are setup
+			#}
+			#completion_reward = {
+				#country_event = {
+				#days = 14 
+				#id = qing.1 
+				#}
+			#}
+		}
+
+		#Focus for China Belongs to Japan
+		focus = {
+			id = SGJ_china_belongs_to_japan
+			icon = GFX_goal_unknown
+			x = 31
+			y = 8
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_demand_northern_china }
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				create_wargoal = { 
+				type = annex_everything 
+				target = QNG
+				}
+			}
+		}
+
+		#Focus for Proclaim Japanese Trade Empire
+		focus = {
+			id = SGJ_proclaim_japanese_trade_empire
+			icon = GFX_goal_unknown
+			x = 33
+			y = 9
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { 
+				focus = SGJ_china_belongs_to_japan 
+			}
+			prerequisite = { 
+				focus = SGJ_maori_nuisance 
+			}
+			search_filters = { FOCUS_FILTER_POLITICAL } 
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				add_ideas = free_trade
+				random_owned_controlled_state={
+				limit = {
+				free_building_slots = {
+				building = industrial_complex
+				size > 0
+				include_locked = yes
+				}
+
+				}
+
+					add_extra_state_shared_building_slots = 5
+					add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+					}
+				}
+			add_political_power = 150
+			}
+		} #This may not be in the right place. If your focus tree is having issues, check the above focus, as this closing brace was added to close the focus.
+
+		#Focus for Increase Weapon Production
+		focus = {
+			id = SGJ_increase_weapon_production
+			icon = GFX_goal_unknown
+			x = 11
+			y = 5
+			cost = 15
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_increase_shogunates_influence }
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				random_owned_controlled_state={
+				limit = {
+				free_building_slots = {
+				building = arms_factory
+				size > 0
+				include_locked = yes
+				}
+				}
+
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+					}
+				}
+			}
+		} #This may not be in the right place. If your focus tree is having issues, check the above focus, as this closing brace was added to close the focus.
+
+		#Focus for Bushido
+		focus = {
+			id = SGJ_bushido
+			icon = GFX_goal_unknown
+			x = 12
+			y = 6
+			cost = 15
+			available_if_capitulated = yes
+			prerequisite = { 
+				focus = SGJ_samurai_generals 
+			}
+			prerequisite = { 
+				focus = SGJ_increase_weapon_production 
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				add_ideas = bushido
+				add_war_support = 0.05
+				add_stability = 0.10
+			}
+		}
+
+		#Focus for Increase Shogunate's Influence
+		focus = {
+			id = SGJ_increase_shogunates_influence
+			icon = GFX_goal_unknown
+			x = 12
+			y = 4
+			cost = 15
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_assassinate_political_opponents }
+			search_filters = { FOCUS_FILTER_POLITICAL } 
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				add_political_power = 150
+			}
+		}
+
+		#Focus for Increase Emperor's Power
+		focus = {
+			id = SGJ_increase_emperors_power
+			icon = GFX_goal_unknown
+			x = 0
+			y = 1
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_focus_on_the_interior }
+			mutually_exclusive = { 
+				focus = SGJ_divine_right 
+			}
+			mutually_exclusive = { 
+				focus = SGJ_samurai_centric_government 
+			}
+			mutually_exclusive = { 
+				focus = SGJ_citizens_government_participation 
+			}
+			search_filters = { FOCUS_FILTER_POLITICAL } 
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				add_stability = 0.10
+				add_war_support = 0.05
+			}
+		}
+
+		#Focus for Samurai Centric Government
+		focus = {
+			id = SGJ_samurai_centric_government
+			icon = GFX_goal_unknown
+			x = 12
+			y = 1
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_focus_on_the_interior }
+			mutually_exclusive = { 
+				focus = SGJ_divine_right 
+			}
+			mutually_exclusive = { 
+				focus = SGJ_increase_emperors_power 
+			}
+			mutually_exclusive = { 
+				focus = SGJ_citizens_government_participation 
+			}
+			search_filters = { FOCUS_FILTER_POLITICAL } 
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		#Focus for Assassinate Political Opponents
+		focus = {
+			id = SGJ_assassinate_political_opponents
+			icon = GFX_goal_unknown
+			x = 12
+			y = 3
+			cost = 15
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_samurai_families }
+			search_filters = { FOCUS_FILTER_POLITICAL } 
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				add_ideas = assassinate_political_opponents
+			}
+		}
+
+		#Focus for Samurai Generals
+		focus = {
+			id = SGJ_samurai_generals
+			icon = GFX_goal_unknown
+			x = 13
+			y = 5
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_increase_shogunates_influence }
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = samurai_families 
+					add_idea = samurai_generals 
+				}
+			}
+		}
+
+		#Focus for The People's Guardians
+		focus = {
+			id = SGJ_the_peoples_guardians
+			icon = GFX_goal_unknown
+			x = 12
+			y = 7
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_bushido }
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				add_stability = 0.10
+				add_war_support = 0.10
+				add_ideas = peoples_guardian
+			}
+		}
+
+		#Focus for Forced Workers
+		focus = {
+			id = SGJ_forced_workers
+			icon = GFX_goal_unknown
+			x = 10
+			y = 7
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_bushido }
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				add_war_support = -0.05
+				add_stability = -0.15
+				add_ideas = forced_workers
+			}
+		}
+
+		#Focus for Forced Fighters
+		focus = {
+			id = SGJ_forced_fighters
+			icon = GFX_goal_unknown
+			x = 14
+			y = 7
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_bushido }
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				add_war_support = -0.10
+				add_ideas = forced_fighters
+			}
+		}
+
+		#Focus for Remain Isolated
+		focus = {
+			id = SGJ_remain_isolated
+			icon = GFX_goal_unknown
+			x = 26
+			y = 0
+			cost = 10
+			available_if_capitulated = yes
+			mutually_exclusive = { focus = SGJ_break_isolation }
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				add_stability = 0.50
+				add_war_support = -0.20
+			}
+		}
+
+		#Focus for Invite Foreign Industrialists
+		focus = {
+			id = SGJ_invite_foreign_industrialists
+			icon = GFX_goal_unknown
+			x = 15
+			y = 10
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { 
+				focus = SGJ_prepare_for_shinto_indoctrination 
+				focus = SGJ_prepare_for_the_future_wars 
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				has_completed_focus = SGJ_break_isolation
+			}
+		}
+
+		#Focus for Follow in the Footsteps of Izanami and Izanagi
+		focus = {
+			id = SGJ_follow_in_the_footsteps_of_izanami_and_izanagi
+			icon = GFX_goal_unknown
+			x = 16
+			y = 6
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_receive_hachimans_blessing }
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				add_ideas = lead_by_izanami_and_izanagi
+			}
+		}
+
+		#Focus for Create Shinto Shrines
+		focus = {
+			id = SGJ_create_shinto_shrines
+			icon = GFX_goal_unknown
+			x = 18
+			y = 6
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_receive_hachimans_blessing }
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				add_stability = 0.15
+			}
+		}
+
+		#Focus for Noushin's Grace
+		focus = {
+			id = SGJ_noushins_grace
+			icon = GFX_goal_unknown
+			x = 20
+			y = 6
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_receive_hachimans_blessing }
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				add_ideas = noushins_grace
+			}
+		}
+
+		#Focus for Create Shinto State
+		focus = {
+			id = SGJ_create_shinto_state
+			icon = GFX_goal_unknown
+			x = 18
+			y = 4
+			cost = 15
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_convince_political_opponents }
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				remove_ideas = shintoism_accepted_by_government  
+				set_politics= {
+					ruling_party = communism
+					elections_allowed = no 
+				}
+			}
+		}
+
+		#Focus for National Shintoism
+		focus = {
+			id = SGJ_national_shintoism
+			icon = GFX_goal_unknown
+			x = 18
+			y = 2
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_divine_right }
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				add_ideas = national_shintoism
+			}
+		}
+
+		#Focus for Convince Political Opponents
+		focus = {
+			id = SGJ_convince_political_opponents
+			icon = GFX_goal_unknown
+			x = 18
+			y = 3
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_national_shintoism }
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				swap_ideas= {
+				remove_idea = national_shintoism 
+				add_idea = shintoism_accepted_by_government 
+				}
+				add_stability = 0.05
+			}
+		}
+
+		#Focus for Receive Hachiman's Blessing
+		focus = {
+			id = SGJ_receive_hachimans_blessing
+			icon = GFX_goal_unknown
+			x = 18
+			y = 5
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_create_shinto_state }
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				add_ideas = hachimans_blessing
+			}
+		}
+
+		#Focus for Begin Industrializing
+		focus = {
+			id = SGJ_begin_industrializing
+			icon = GFX_goal_unknown
+			x = 15
+			y = 11
+			cost = 15
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_invite_foreign_industrialists }
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				add_ideas = new_industrialists
+			}
+		}
+
+		#Focus for Break Maritime Restrictions
+		focus = {
+			id = SGJ_break_maritime_restrictions
+			icon = GFX_goal_unknown
+			x = 14
+			y = 12
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_begin_industrializing }
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				remove_ideas = maritime_restrictions
+			}
+		}
+
+		#Focus for Mass Produce Weapons
+		focus = {
+			id = SGJ_mass_produce_weapons
+			icon = GFX_goal_unknown
+			x = 16
+			y = 12
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_begin_industrializing }
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				random_owned_controlled_state={
+							limit = {
+							free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+							}
+						}
+
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+					type = arms_factory
+					level = 4
+					instant_build = yes
+					}
+				}
+			}
+		}
+
+		#Focus for Growing Industrialization
+		focus = {
+			id = SGJ_growing_industrialization
+			icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+			x = 15
+			y = 14
+			cost = 15
+			available_if_capitulated = yes
+			prerequisite = { 
+				focus = SGJ_mass_produce_weapons 
+			}
+			prerequisite = { 
+				focus = SGJ_break_maritime_restrictions 
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				swap_ideas= {
+				remove_idea = new_industrialists 
+				add_idea = industrializing 
+				}
+			}
+		}
+
+		#Focus for Expand the Navy
+		focus = {
+			id = SGJ_expand_the_navy
+			icon = GFX_goal_unknown
+			x = 13
+			y = 16
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_growing_industrialization }
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				navy_experience = 50
+				random_owned_controlled_state={
+					limit = {
+					free_building_slots = {
+					building = dockyard
+					size > 0
+					include_locked = yes
+					}
+
+					}
+
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+					type = dockyard
+					level = 4
+					instant_build = yes
+					}
+
+
+				}
+			}
+		}
+
+		#Focus for Increase Industrial Capacity
+		focus = {
+			id = SGJ_increase_industrial_capacity
+			icon = GFX_goal_unknown
+			x = 15
+			y = 16
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_growing_industrialization }
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				random_owned_controlled_state={
+					limit = {
+					free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+					}
+
+					}
+
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+					}
+
+
+				}
+			}
+		}
+
+		#Focus for Increase Arms Production
+		focus = {
+			id = SGJ_increase_arms_production
+			icon = GFX_goal_unknown
+			x = 17
+			y = 16
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = { focus = SGJ_growing_industrialization }
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				random_owned_controlled_state={
+					limit = {
+					free_building_slots = {
+					building = arms_factory
+					size > 0
+					include_locked = yes
+					}
+				}
+
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+					}
+				}
+			}
+		}
+
+		#Focus for Finish Industrizing
+		focus = {
+				id = SGJ_finish_industrizing
+				icon = GFX_goal_unknown
+				x = 15
+				y = 17
+				cost = 15
+				available_if_capitulated = yes
+				prerequisite = { 
+					focus = SGJ_expand_the_navy 
+				}
+				prerequisite = { 
+					focus = SGJ_increase_industrial_capacity 
+				}
+				prerequisite = { 
+					focus = SGJ_increase_arms_production 
+				}
+				ai_will_do = {
+					factor = 1
+				}
+				completion_reward = {
+					swap_ideas = {
+					remove_idea = industrializing 
+					add_idea = industrialized_economy
+					}
+				}
+			}
+
+		#End of focuses 
+	}

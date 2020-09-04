@@ -1,0 +1,25 @@
+
+state={
+	id=825
+	name="STATE_825"
+	manpower = 808504
+	
+	state_category = town
+
+	history={
+		owner = JEO
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			
+		}
+		add_core_of = JEO
+		
+
+
+	}
+
+	provinces={
+		7612 10437 10465 12325 12470 12498 
+	}
+}

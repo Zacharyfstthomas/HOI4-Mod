@@ -1,0 +1,327 @@
+ideas = {
+	country = {
+	
+		samurai_families = {
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			removal_cost = -1
+
+			picture = samurai_families.dds
+			
+			modifier = {
+				fascism_drift = 0.05
+				recruitable_population = 0.02
+				stability_factor = -0.05
+			}
+		}
+	
+		assassinate_political_opponents = {
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			removal_cost = -1
+
+			picture = assassinate_political_opponents.dds
+			
+			modifier = {
+				fascism_drift = 0.10
+				communism_drift = -0.10
+				neutrality_drift = -0.10
+				democratic_drift = -0.10
+				stability_factor = -0.10
+			}
+		}
+	
+		national_shintoism = {
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			removal_cost = -1
+
+			picture = national_shintoism.dds
+			
+			modifier = {
+				stability_factor = 0.10
+			}
+		}
+		
+		shintoism_accepted_by_government = {
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			removal_cost = -1
+
+			picture = shintoism_accepted_by_government.dds
+			
+			modifier = {
+				communism_drift = 0.10
+				stability_factor = 0.10
+				fascism_drift = -0.10
+				democratic_drift = -0.10
+				neutrality_drift = -0.10
+			}
+		}
+	
+		hachimans_blessing = {
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			removal_cost = -1
+
+			picture = hachimans_blessing.dds
+			
+			modifier = {
+				army_attack_factor = 0.10
+			}
+		}
+	
+		lead_by_izanami_and_izanagi = {
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			removal_cost = -1
+
+			picture = lead_by_izanami_and_izanagi.dds
+			
+			modifier = {
+				production_speed_buildings_factor = 0.10
+			}
+		}
+		
+		noushins_grace = {
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			removal_cost = -1
+
+			picture = noushins_grace.dds
+			
+			modifier = {
+				fuel_gain_factor = 0.25
+				recruitable_population = 0.005
+			}
+		}
+	
+		inaris_kitsune = {
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			removal_cost = -1
+
+			picture = inaris_kitsune.dds
+			
+			modifier = {
+				land_reinforce_rate = 0.15
+			}
+		}
+	
+		new_industrialists = {
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			removal_cost = -1
+
+			picture = new_industrialists.dds
+			
+			modifier = {
+				production_speed_buildings_factor = 0.10
+				stability_factor = 0.10
+			}
+		}
+	
+		industrializing = {
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			removal_cost = -1
+
+			picture = industrializing.dds
+			
+			modifier = {
+				production_speed_buildings_factor = 0.20
+				stability_factor = 0.10
+			}
+		}
+	
+		industrialized_economy = {
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			removal_cost = -1
+
+			picture = industrialized_economy.dds
+			
+			modifier = {
+				production_speed_buildings_factor = 0.25
+				stability_factor = 0.10
+				industrial_capacity_factory = 0.10
+				industrial_capacity_dockyard = 0.10
+			}
+		}
+		
+		blessings_of_the_kami = {
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			removal_cost = -1
+
+			picture = blessings_of_the_kami.dds
+			
+			modifier = {
+				recruitable_population = 0.005
+				fuel_gain_factor = 0.25
+				production_speed_buildings_factor = 0.15
+				land_reinforce_rate = 0.15
+				army_attack_factor = 0.10
+			}
+		}
+		
+		samurai_generals = {
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			removal_cost = -1
+
+			picture = samurai_generals.dds
+			
+			modifier = {
+				army_attack_factor = 0.10
+				recruitable_population = 0.02
+			}
+		}
+	
+		bushido = {
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			removal_cost = -1
+
+			picture = bushido.dds
+			
+			modifier = {
+				army_attack_factor = 0.10
+				army_defence_factor = 0.10
+				army_morale_factor = 0.10
+			}
+		}
+	
+		maritime_restrictions = {
+			
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = maritime_restrictions.dds
+			
+			modifier = {
+				industrial_capacity_dockyard = -2.00
+			}
+		}
+		
+		maritime_restrictions_02 = {
+			
+			allowed = {
+				always = no #added via focus
+			}
+
+			removal_cost = -1
+
+			picture = maritime_restrictions.dds
+			
+			modifier = {
+				industrial_capacity_dockyard = -1.00
+			}
+		}
+		
+		forced_fighters = {
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			removal_cost = -1
+
+			picture = forced_fighters.dds
+			
+			modifier = {
+				recruitable_population_factor = 0.01
+				training_time_army_factor = 0.10
+			}
+		}
+	
+		forced_workers = {
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			removal_cost = -1
+
+			picture = forced_workers.dds
+			
+			modifier = {
+				production_speed_buildings_factor = 0.10
+			}
+		}
+	
+		peoples_guardian = {
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			removal_cost = -1
+
+			picture = peoples_guardian.dds
+			
+			modifier = {
+				resistance_damage_to_garrison = -0.20
+			}
+		}
+		
+		samurai_standing = {
+			
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = samurai_standing.dds
+			
+			modifier = {
+				political_power_gain = -0.50
+			}
+		}
+	}

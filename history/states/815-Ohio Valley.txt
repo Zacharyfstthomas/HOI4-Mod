@@ -1,0 +1,24 @@
+
+state={
+	id=815
+	name="STATE_815"
+	manpower = 351054
+	
+	state_category = rural
+
+	history={
+		owner = VIR
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+
+		}
+		add_core_of = VIR
+	
+
+	}
+
+	provinces={
+		801 3975 6850 9923
+	}
+}
