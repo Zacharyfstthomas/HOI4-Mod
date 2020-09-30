@@ -10,7 +10,7 @@ state={
 		controller = PSA
 		
 		victory_points = {
-			6332 10 
+			6332 50 
 		}
 
 		buildings = {
