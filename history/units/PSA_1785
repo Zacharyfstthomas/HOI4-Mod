@@ -8,12 +8,12 @@ division_template = {
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }	
-    infantry = { x = 1 y = 2 }
+		infantry = { x = 1 y = 2 }
 
 	}
 	support = {
 		engineer = { x = 0 y = 0 }
-    artillery = { x = 0 y = 1 }
+		artillery = { x = 0 y = 1 }
 	}
 }
 division_template = {
@@ -23,18 +23,18 @@ division_template = {
 	regiments = {
 		light_armor = { x = 0 y = 0 }
 		light_armor = { x = 0 y = 1 }
-    cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 0 }
 		cavalry = { x = 1 y = 1 }
-    cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
 	}
 	support = {
 		artillery = { x = 0 y = 0 } 
-    cav_recon = { x = 0 y = 1 } # Recon consisted of ACs, motorcycle inf, cavalry
+		recon = { x = 0 y = 1 } # Recon consisted of ACs, motorcycle inf, cavalry
+		}
 	}
-}
-units = {
+	units = {
 	######## LAND UNITS ########
-division= {	# "Zweite Infanterie-Abteilung"		
+	division= {	# "Zweite Infanterie-Abteilung"		
 		location = 281
 		division_template = "Infanterie-Abteilung"
 		start_experience_factor = 0.75
@@ -49,7 +49,7 @@ division= {	# "Zweite Infanterie-Abteilung"
 		start_equipment_factor = 0.85
     }
     
-division= {	# "Dritte Infanterie-Abteilung"		
+	division= {	# "Dritte Infanterie-Abteilung"		
 		location = 395
 		division_template = "Infanterie-Abteilung"
 		start_experience_factor = 0.75
@@ -59,7 +59,7 @@ division= {	# "Dritte Infanterie-Abteilung"
 	
 	division= {	# "Vierte Infanterie-Abteilung"		
 		location = 3384
-		division_template = "Infanterie-Abteilung "
+		division_template = "Infanterie-Abteilung"
 		start_experience_factor = 0.75
 		start_equipment_factor = 0.85
 	}
@@ -73,12 +73,12 @@ division= {	# "Dritte Infanterie-Abteilung"
 	
 	division= {	# "Sechste Infanterie-Abteilung"		
 		location = 11265
-		division_template = "Infanterie-Abteilung "
+		division_template = "Infanterie-Abteilung"
 		start_experience_factor = 0.75
 		start_equipment_factor = 0.85
     }
     
-division= {	# "Siebte Infanterie-Abteilung"		
+	division= {	# "Siebte Infanterie-Abteilung"		
 		location = 375
 		division_template = "Infanterie-Abteilung"
 		start_experience_factor = 0.75
@@ -88,7 +88,7 @@ division= {	# "Siebte Infanterie-Abteilung"
 	
 	division= {	# "Achte Infanterie-Abteilung"		
 		location = 478
-		division_template = "Infanterie-Abteilung "
+		division_template = "Infanterie-Abteilung"
 		start_experience_factor = 0.75
 		start_equipment_factor = 0.85
 	}
@@ -102,7 +102,7 @@ division= {	# "Siebte Infanterie-Abteilung"
 	
 	division= {	# "Zehntel Infanterie-Abteilung"		
 		location = 3499
-		division_template = "Infanterie-Abteilung "
+		division_template = "Infanterie-Abteilung"
 		start_experience_factor = 0.75
 		start_equipment_factor = 0.80
     }
@@ -117,13 +117,13 @@ division= {	# "Elfte Infanterie-Abteilung"
 	
 	division= {	# "Zwölftel Infanterie-Abteilung"		
 		location = 281
-		division_template = "Infanterie-Abteilung "
+		division_template = "Infanterie-Abteilung"
 		start_experience_factor = 0.75
 		start_equipment_factor = 0.75
 	}
   division= {	# "Zuerst Deutsche Legion des Königs"		
 		location = 281
-		division_template = "Deutsche Legion des Königs "
+		division_template = "Deutsche Legion des Königs"
 		start_experience_factor = 0.75
 		start_equipment_factor = 0.85
 	}
