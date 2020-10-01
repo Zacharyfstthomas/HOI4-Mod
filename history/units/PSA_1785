@@ -1,1 +1,136 @@
-#army tbd 
+#army looks good rn
+division_template = {
+	name = "Infanterie-Abteilung"			# Infantry Division - Planned formation for mobilization of divisions, 1937-1940
+	division_names_group = SWE_INF_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }	
+    infantry = { x = 1 y = 2 }
+
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+    artillery = { x = 0 y = 1 }
+	}
+}
+division_template = {
+	name = "Deutsche Legion des Königs"  	# Hussar Division
+	division_names_group = SWE_CAV_01
+
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+    cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+    cavalry = { x = 1 y = 1 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 } 
+    cav_recon = { x = 0 y = 1 } # Recon consisted of ACs, motorcycle inf, cavalry
+	}
+}
+units = {
+	######## LAND UNITS ########
+division= {	# "Zweite Infanterie-Abteilung"		
+		location = 281
+		division_template = "Infanterie-Abteilung"
+		start_experience_factor = 0.75
+		start_equipment_factor = 0.925
+
+	}			
+	
+	division= {	# "Zuerst Infanterie-Abteilung"		
+		location = 348
+		division_template = "Infanterie-Abteilung "
+		start_experience_factor = 0.75
+		start_equipment_factor = 0.85
+    }
+    
+division= {	# "Dritte Infanterie-Abteilung"		
+		location = 395
+		division_template = "Infanterie-Abteilung"
+		start_experience_factor = 0.75
+		start_equipment_factor = 0.925
+
+	}			
+	
+	division= {	# "Vierte Infanterie-Abteilung"		
+		location = 3384
+		division_template = "Infanterie-Abteilung "
+		start_experience_factor = 0.75
+		start_equipment_factor = 0.85
+	}
+  division= {	# "Fünfte Infanterie-Abteilung"		
+		location = 6332
+		division_template = "Infanterie-Abteilung"
+		start_experience_factor = 0.75
+		start_equipment_factor = 0.90
+
+	}			
+	
+	division= {	# "Sechste Infanterie-Abteilung"		
+		location = 11265
+		division_template = "Infanterie-Abteilung "
+		start_experience_factor = 0.75
+		start_equipment_factor = 0.85
+    }
+    
+division= {	# "Siebte Infanterie-Abteilung"		
+		location = 375
+		division_template = "Infanterie-Abteilung"
+		start_experience_factor = 0.75
+		start_equipment_factor = 0.95
+
+	}			
+	
+	division= {	# "Achte Infanterie-Abteilung"		
+		location = 478
+		division_template = "Infanterie-Abteilung "
+		start_experience_factor = 0.75
+		start_equipment_factor = 0.85
+	}
+  division= {	# "Neunte Infanterie-Abteilung"		
+		location = 3367
+		division_template = "Infanterie-Abteilung"
+		start_experience_factor = 0.75
+		start_equipment_factor = 0.95
+
+	}			
+	
+	division= {	# "Zehntel Infanterie-Abteilung"		
+		location = 3499
+		division_template = "Infanterie-Abteilung "
+		start_experience_factor = 0.75
+		start_equipment_factor = 0.80
+    }
+    
+division= {	# "Elfte Infanterie-Abteilung"		
+		location = 3522
+		division_template = "Infanterie-Abteilung"
+		start_experience_factor = 0.75
+		start_equipment_factor = 0.925
+
+	}			
+	
+	division= {	# "Zwölftel Infanterie-Abteilung"		
+		location = 281
+		division_template = "Infanterie-Abteilung "
+		start_experience_factor = 0.75
+		start_equipment_factor = 0.75
+	}
+  division= {	# "Zuerst Deutsche Legion des Königs"		
+		location = 281
+		division_template = "Deutsche Legion des Königs "
+		start_experience_factor = 0.75
+		start_equipment_factor = 0.85
+	}
+  division= {	# "Zweite Deutsche Legion des Königs"		
+		location = 281
+		division_template = "Deutsche Legion des Königs"
+		start_experience_factor = 0.75
+		start_equipment_factor = 0.90
+
+	}
