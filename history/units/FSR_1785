@@ -44,7 +44,7 @@ division_template = {
 	
 	division= {	# "Zuerst Infanterie-Abteilung"		
 		location = 3423
-		division_template = "Infanterie-Abteilung "
+		division_template = "Infanterie-Abteilung"
 		start_experience_factor = 0.75
 		start_equipment_factor = 0.85
     }
