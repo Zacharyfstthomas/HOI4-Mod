@@ -1,5 +1,5 @@
 ﻿capital = 51
-
+	OOB = "FSR_1785"
 # Starting tech
 set_technology = {
 	infantry_weapons = 1
