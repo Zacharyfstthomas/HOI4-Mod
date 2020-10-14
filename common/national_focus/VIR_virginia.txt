@@ -1,0 +1,1017 @@
+focus_tree = {
+	id = virginia
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = VIR
+		}
+	}
+	
+	
+	
+	#Focus for War Technology
+	focus = {
+		id = NEY_war_technology
+		icon = GFX_focus_eng_organise_the_blackshirts
+		x = 10
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_embrace_the_enlightenment }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+		bonus = 0.50
+		uses = 4
+		category = land_doctrine
+		}
+
+		add_tech_bonus = {
+		bonus = 0.50
+		uses = 4
+		category = artillery
+		}
+
+
+		add_tech_bonus = {
+		bonus = 0.50
+		uses = 4
+		category = infantry_weapons
+		}
+
+		add_tech_bonus = {
+		bonus = 0.50
+		uses = 3
+		category = motorized_equipment
+		}
+	}
+}
+	
+	#Focus for Workforce Training
+	focus = {
+		id = VIR_workforce_training
+		icon = GFX_goal_unknown
+		x = 2
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_urbanization }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		#For a few months :
+		# consumer good factories + 2.5%
+#industrial_capacity_factory = 0.1 
+#production_factory_efficiency_gain_factor = 0.05 
+#production_factory_start_efficiency_factor = 0.05
+		}
+	}
+
+#Focus for Home-Grown Heroes
+	focus = {
+		id = VIR_homegrown_heroes
+		icon = GFX_goal_unknown
+		x = 8
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_revitalize_our_veins }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		# idea for recruitable_population = 0.020 
+		#idea for additonal core defense
+		add_war_support = .10
+	
+	}
+}
+
+
+	
+	#	Focus for Reconsider The Agrarian Lifestyle
+	focus = {
+		id = VIR_reconsider_the_agrarian_lifestyle
+		icon = GFX_goal_unknown
+		x = 5
+		y = 2
+		cost = 14
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_virginia_behind_washington }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+		factor = 1
+		}
+		available = {
+			num_of_factories > 25
+		}
+		completion_reward = {
+			random_owned_state = {
+ add_extra_state_shared_building_slots = 2 
+}
+
+random_owned_state = {
+ add_extra_state_shared_building_slots = 2 
+}
+		}
+	}
+#Focus for Urbanization
+	focus = {
+		id = VIR_urbanization
+		icon = GFX_goal_unknown
+		x = 2
+		y = 4
+		cost = 15
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_embrace_industrialization }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			358 = {
+			add_extra_state_shared_building_slots = 6 
+
+			}
+  
+		}
+	}
+
+
+
+#Focus for Embrace the Enlightenment
+	focus = {
+		id = VIR_embrace_the_enlightenment
+		icon = GFX_goal_unknown
+		x = 5
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = VIR_mass_production 
+			focus = VIR_revitalize_our_veins 
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			VIR = {add_research_slot= 1}
+		}
+	}
+
+
+#Focus for Feed the War Machine
+	focus = {
+		id = VIR_feed_the_war_machine
+		icon = GFX_goal_unknown
+		x = 8
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_reconsider_the_agrarian_lifestyle }
+		mutually_exclusive = { focus = VIR_embrace_industrialization }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+		bonus = 1
+		uses = 2
+		category = industry
+		} 
+
+		add_resource {
+		type = oil 
+		amount = 10
+		state = 801}
+
+
+		add_resource {
+		type = oil
+		amount = 10
+		state = 798}
+
+		#conscription = .025
+
+		random_owned_controlled_state = { 
+		limit = { 
+		free_building_slots = { 
+        building = industrial_complex size > 0
+        include_locked = yes } 
+       } 
+		add_extra_state_shared_building_slots = 1 add_building_construction = { 
+			type = industrial_complex level = 1 
+			instant_build = yes } 
+		set_state_flag = VIR
+
+	}
+
+		random_owned_controlled_state = { 
+		limit = { 
+		free_building_slots = { 
+			building = industrial_complex size > 0
+			include_locked = yes } 
+       } 
+		add_extra_state_shared_building_slots = 1 add_building_construction = { 
+			type = industrial_complex level = 1 
+			instant_build = yes } 
+		set_state_flag = VIR
+			}
+		}
+	}
+	
+	#Focus for Embrace Industrialization
+	focus = {
+		id = VIR_embrace_industrialization
+		icon = GFX_goal_unknown
+		x = 2
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_reconsider_the_agrarian_lifestyle }
+		mutually_exclusive = { focus = VIR_feed_the_war_machine }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = { bonus = 0.55 uses = 3 category = industry }
+
+	#production_speed_buildings_factor = .1
+		}
+	}
+
+	#Focus for Revitalize Our Veins
+	focus = {
+		id = VIR_revitalize_our_veins
+		icon = GFX_goal_unknown
+		x = 8
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_increase_crop_yeilds }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		#	production_speed_infrastructure_factor = .5
+
+		random_owned_controlled_state = { add_building_construction = { type = infrastructure 
+		level = 6
+		instant_build = yes } 
+			}
+		random_owned_controlled_state = { add_building_construction = { type = infrastructure 
+		level = 6 
+		instant_build = yes } 
+			}
+		random_owned_controlled_state = { add_building_construction = { type = infrastructure 
+		level = 6 
+		instant_build = yes }
+			}
+		}
+	}
+
+	#Focus for Increase Crop Yeilds
+	focus = {
+		id = VIR_increase_crop_yeilds
+		icon = GFX_goal_unknown
+		x = 8
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_feed_the_war_machine }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+	#		local_resources_factor = .5
+		}
+	}
+
+	#Focus for Mass Production
+	focus = {
+		id = VIR_mass_production
+		icon = GFX_goal_unknown
+		x = 2
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_urbanization }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			#production_factory_max_efficiency_factor = 0.1
+#line_change_production_efficiency_factor = 0.15
+ #	production_speed_buildings_factor = 0.1 
+#industrial_capacity_factory = 0.1 
+#production_factory_efficiency_gain_factor = 0.05 
+#production_factory_start_efficiency_factor = 0.05
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	#Focus for Washington Is Second To The Congress
+	focus = {
+		id = VIR_washington_is_second_to_the_congress
+		icon = GFX_goal_unknown
+		x = 21
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_give_in_to_washingtons_demands }
+		mutually_exclusive = { focus = VIR_washingtons_opinion_comes_first }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			#Oppositon influence idea
+add_popularity= { 
+ideology = opposition
+popularity = 0.2
+}
+		}
+	}
+
+	#Focus for Humanity Over Economy
+	focus = {
+		id = VIR_humanity_over_economy
+		icon = GFX_goal_unknown
+		x = 16
+		y = 4
+		cost = 15
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_reconsider_our_negro_stance }
+		search_filters = { FOCUS_FILTER_FRA_POLITICAL_VIOLENCE } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			#requires to embrace the 
+#industrialization focus
+#begin a string of events that may lead to #white civil war, but lead to extra #research slot, war support, manpower, and #other great buffs to strengthen the #nation.
+#Very long event with great payoffs. 
+#Just like emancipation was.
+		}
+	}
+
+	#Focus for Consolidate Southern Influence
+	focus = {
+		id = VIR_consolidate_southern_influence
+		icon = GFX_goal_unknown
+		x = 23
+		y = 4
+		cost = 12
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_disregard_the_north }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			VIR = {create_faction = "Cotton Coalition" }
+add_to_faction = JEO
+add_to_faction = SOC
+add_to_faction = NOC
+		}
+	}
+
+	#Focus for Negroes Are Not to be Free
+	focus = {
+		id = VIR_negroes_are_not_to_be_free
+		icon = GFX_goal_unknown
+		x = 20
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = VIR_washington_is_second_to_the_congress 
+			focus = VIR_washingtons_opinion_comes_first 
+		}
+		mutually_exclusive = { focus = VIR_reconsider_our_negro_stance }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			#Stability rise. Nothing else significant, #allows for Cotton Gin to become a big factor.
+		}
+	}
+
+	#Focus for Washington Is Second To God
+	focus = {
+		id = VIR_washington_is_second_to_god
+		icon = GFX_goal_unknown
+		x = 29
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_force_washington_in_charge }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			#communism influence idea
+add_popularity= { 
+ideology = communism
+popularity = 0.2
+ 
+}
+		}
+	}
+
+	#Focus for Washington Shall Not be Questioned
+	focus = {
+		id = VIR_washington_shall_not_be_questioned
+		icon = GFX_goal_unknown
+		x = 34
+		y = 2
+		cost = 14
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_force_washington_in_charge }
+		mutually_exclusive = { focus = VIR_washington_is_second_to_god }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			#fascism ideology idea
+add_popularity= { 
+ideology = fascism 
+popularity = 0.2 
+}
+		}
+	}
+
+	#Focus for Disregard the North
+	focus = {
+		id = VIR_disregard_the_north
+		icon = GFX_goal_unknown
+		x = 23
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_washington_is_second_to_the_congress }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			#idea to minorly improve relations with southern nations (+10)
+#noticibly hamper northern relations (-25)
+#event spawn
+		}
+	}
+
+	#Focus for Washington's Opinion Comes First
+	focus = {
+		id = VIR_washingtons_opinion_comes_first
+		icon = GFX_goal_unknown
+		x = 15
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_give_in_to_washingtons_demands }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			#democratic influence idea
+add_popularity= { 
+ideology = democratic
+popularity = 0.2 
+}
+		}
+	}
+
+	#Focus for Force Washington In Charge
+	focus = {
+		id = VIR_force_washington_in_charge
+		icon = GFX_goal_unknown
+		x = 32
+		y = 1
+		cost = 14
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_virginia_behind_washington }
+		mutually_exclusive = { focus = VIR_give_in_to_washingtons_demands }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = fascism 
+popularity = 0.1 
+}
+
+
+add_popularity= { 
+ideology = communism 
+popularity = 0.1 
+}
+		}
+	}
+
+	#Focus for Virginia Behind Washington
+	focus = {
+		id = VIR_virginia_behind_washington
+		icon = GFX_goal_unknown
+		x = 22
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 200
+		}
+	}
+
+	#Focus for Give in to Washington's Demands
+	focus = {
+		id = VIR_give_in_to_washingtons_demands
+		icon = GFX_goal_unknown
+		x = 17
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_virginia_behind_washington }
+		mutually_exclusive = { focus = VIR_force_washington_in_charge }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = democratic
+popularity = 0.1 
+}
+
+add_popularity= { 
+ideology = opposition
+popularity = 0.1 
+}
+		}
+	}
+
+	#Focus for Reconsider Our Negro Stance
+	focus = {
+		id = VIR_reconsider_our_negro_stance
+		icon = GFX_goal_unknown
+		x = 16
+		y = 3
+		cost = 15
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = VIR_washingtons_opinion_comes_first 
+			focus = VIR_washington_is_second_to_the_congress 
+		}
+		mutually_exclusive = { focus = VIR_negroes_are_not_to_be_free }
+		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			#immediate idea for some manpower, minus some stability
+#gradual emancipation of slaves, much like 
+#the purge
+#overall, increases manpower, industrial capacity, 
+#while decreasing political power, #stability and resource gains.
+		}
+	}
+
+	#Focus for Get Comfy With the South
+	focus = {
+		id = VIR_get_comfy_with_the_south
+		icon = GFX_goal_unknown
+		x = 18
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = VIR_washington_is_second_to_the_congress 
+			focus = VIR_washingtons_opinion_comes_first 
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			#improve relations with Southerners.
+#Guarantee their independence
+		}
+	}
+
+	#Focus for Expand to our Outer Lands
+	focus = {
+		id = VIR_expand_to_our_outer_lands
+		icon = GFX_goal_unknown
+		x = 2
+		y = 2
+		cost = 15
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_virginia_behind_washington }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			#Maybe here convert from wasteland to rural? #Idk if that is possible. Maybe just add slots to wasteland? Its a bit fuzzy. 
+#Spawn events for native resistance.
+
+369 = {
+
+
+add_building_construction = {
+type = infrastructure
+level = 1
+instant = yes
+}
+
+}
+		}
+	}
+
+	#Focus for Make Northern Amends
+	focus = {
+		id = VIR_make_northern_amends
+		icon = GFX_goal_unknown
+		x = 12
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_washingtons_opinion_comes_first }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			#Improve relations. Nothing incredible.
+		}
+	}
+
+	#Focus for Open Ourselves to a Northern Coalition
+	focus = {
+		id = VIR_open_ourselves_to_a_northern_coalition
+		icon = GFX_goal_unknown
+		x = 12
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_make_northern_amends }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			#AI = make much easier to join faction
+#Applies Both ways as far as the AI is #concerned. (ai is virigina/ ai is pa or ny)
+#
+		}
+	}
+
+	#Focus for Uniting America, Under Washington
+	focus = {
+		id = VIR_uniting_america_under_washington
+		icon = GFX_goal_unknown
+		x = 37
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_revisiting_territorial_claims }
+		search_filters = { FOCUS_FILTER_ANNEXATION } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal= { 
+type = annex_everything 
+target = PEN
+
+}
+
+
+create_wargoal= { 
+type = annex_everything 
+target = VIR
+
+}
+
+
+create_wargoal= { 
+type = annex_everything 
+target = CON
+
+}
+
+
+create_wargoal= { 
+type = annex_everything 
+target = MAS
+
+}
+
+
+create_wargoal= { 
+type = annex_everything 
+target = NEH
+
+}
+ 
+
+create_wargoal= { 
+type = annex_everything 
+target = MAI
+
+}
+		}
+	}
+
+	#Focus for Subdue The Negroes
+	focus = {
+		id = VIR_subdue_the_negroes
+		icon = GFX_goal_unknown
+		x = 20
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_negroes_are_not_to_be_free }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			#Garrisons increase == manpower decrease?
+#Some kind of national spirit? Cant think #of one rn.
+#Southern Solidarity? Southern Pride?
+#Something...
+		}
+	}
+
+	#Focus for Washington, A Born Prophet
+	focus = {
+		id = VIR_washington_a_born_prophet
+		icon = GFX_goal_unknown
+		x = 29
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_washington_is_second_to_god }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			#idea for communist drift
+#Add an idea for increased stability, #war support, slight buffs to offense
+# and defense. 
+
+add_popularity= { 
+ideology = communism
+popularity = 0.025
+}
+		}
+	}
+
+	#Focus for Consolidating Power for Washington
+	focus = {
+		id = VIR_consolidating_power_for_washington
+		icon = GFX_goal_unknown
+		x = 34
+		y = 3
+		cost = 15
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_washington_shall_not_be_questioned }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			#Event to kill some politicians.
+#Lowers stability for some time only to #increase it.
+
+add_popularity = { 
+ideology = fascism 
+popularity = 0.2 
+}
+		}
+	}
+
+	#Focus for America Must Know Their Savior
+	focus = {
+		id = VIR_america_must_know_their_savior
+		icon = GFX_goal_unknown
+		x = 29
+		y = 4
+		cost = 15
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_washington_a_born_prophet }
+		search_filters = { FOCUS_FILTER_ANNEXATION } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			VIR = {
+add_state_core= 360
+#And so many more. To be finished later. 
+ }
+		}
+	}
+
+	#Focus for Unifying the South
+	focus = {
+		id = VIR_unifying_the_south
+		icon = GFX_goal_unknown
+		x = 29
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_america_must_know_their_savior }
+		search_filters = { FOCUS_FILTER_ANNEXATION } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal= { 
+type = annex_everything 
+target = SOC
+}
+  
+create_wargoal= { 
+type = annex_everything 
+target = NOC
+}
+
+create_wargoal= { 
+type = annex_everything 
+target = JEO
+}
+		}
+	}
+
+	#Focus for The North Shall Submit
+	focus = {
+		id = VIR_the_north_shall_submit
+		icon = GFX_goal_unknown
+		x = 29
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_unifying_the_south }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal= { 
+type = annex_everything 
+target = PEN
+}
+
+create_wargoal= { 
+type = annex_everything 
+target = NEY
+}
+
+create_wargoal= { 
+type = annex_everything 
+target = NEJ
+}
+
+create_wargoal= { 
+type = annex_everything 
+target = NEH
+}
+
+create_wargoal= { 
+type = annex_everything 
+target = MAI
+}
+
+create_wargoal= { 
+type = annex_everything 
+target = MAS
+}
+
+create_wargoal= { 
+type = annex_everything 
+target = CON
+}
+		}
+	}
+
+	#Focus for To The Pacific
+	focus = {
+		id = VIR_to_the_pacific
+		icon = GFX_goal_unknown
+		x = 29
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_the_north_shall_submit }
+		search_filters = { FOCUS_FILTER_ANNEXATION } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			#Idea for justify war time.
+		}
+	}
+
+	#Focus for Disgarding Negro Lives
+	focus = {
+		id = VIR_disgarding_negro_lives
+		icon = GFX_goal_unknown
+		x = 34
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_consolidating_power_for_washington }
+		search_filters = { FOCUS_FILTER_STABILITY } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			#idea for increased food, productivity,
+#money, lose stability, increase #resistance, and... another form of 
+# attrition?? not sure.
+		}
+	}
+
+	#Focus for Absorbing our Southern Brothers
+	focus = {
+		id = VIR_absorbing_our_southern_brothers
+		icon = GFX_goal_unknown
+		x = 33
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_disgarding_negro_lives }
+		search_filters = { FOCUS_FILTER_ANNEXATION } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal= { 
+type = annex_everything 
+target = SOC
+
+}
+
+
+create_wargoal= { 
+type = annex_everything 
+target = JEO
+
+}
+
+
+create_wargoal= { 
+type = annex_everything 
+target = NOC
+
+}
+		}
+	}
+
+	#Focus for Revisiting Territorial Claims
+	focus = {
+		id = VIR_revisiting_territorial_claims
+		icon = GFX_goal_unknown
+		x = 36
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = VIR_disgarding_negro_lives }
+		search_filters = { FOCUS_FILTER_ANNEXATION } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal= { 
+type = annex_everything 
+target = MRY
+}
+		}
+	}
+
+#End of focuses 
+ }

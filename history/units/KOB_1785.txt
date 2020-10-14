@@ -83,3 +83,4 @@ division_template = {
 		start_equipment_factor = 0.90
 
 	}
+}

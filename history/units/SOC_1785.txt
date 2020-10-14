@@ -29,7 +29,7 @@ division_template = {
 units = {
 	######## LAND UNITS ########
 division= {	# "State Militiamen"		
-		location = 364
+		location = 10029
 		division_template = "Militiamen"
 		start_experience_factor = 0.5
 		start_equipment_factor = 0.95

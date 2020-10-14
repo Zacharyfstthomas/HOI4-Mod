@@ -1,4 +1,4 @@
-﻿division_template = {
+division_template = {
 	name = "Militiamen"			# Infantry Division - Planned formation for mobilization of divisions, 1937-1940
 	division_names_group = SWE_INF_01
 
@@ -29,7 +29,7 @@ division_template = {
 units = {
 	######## LAND UNITS ########
 division= {	# "State Militiamen"		
-		location = 6984
+		location = 9847
 		division_template = "Militiamen"
 		start_experience_factor = 0.5
 		start_equipment_factor = 0.95

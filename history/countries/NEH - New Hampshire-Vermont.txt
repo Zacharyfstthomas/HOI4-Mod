@@ -1,5 +1,5 @@
 capital = 808
-
+oob = "NEH_1785"
 set_research_slots = 3
 
 set_technology = {

@@ -29,7 +29,7 @@ division_template = {
 units = {
 	######## LAND UNITS ########
 division= {	# "State Militiamen"		
-		location = 362
+		location = 7558
 		division_template = "Militiamen"
 		start_experience_factor = 0.5
 		start_equipment_factor = 0.95
@@ -37,9 +37,19 @@ division= {	# "State Militiamen"
 	}			
 	
 	division= {	# "State Militiamen"		
-		location = 815
+		location = 10412
 		division_template = "Militiamen"
 		start_experience_factor = 0.5
 		start_equipment_factor = 0.95
 
 	}			
+	
+	division= {	# "Scout Calvary"		
+		location = 12568
+		division_template = "Scout Calvary"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.95
+
+	}		
+	
+}

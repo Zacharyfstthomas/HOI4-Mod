@@ -1,5 +1,5 @@
 capital = 365
-
+oob = "JEO_1785"
 set_research_slots = 4
 
 set_technology = {
